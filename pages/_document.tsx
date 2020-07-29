@@ -9,7 +9,7 @@ export default class OdontovidaDocument extends Document {
 
     render() {
         return (
-            <Html>
+            <Html lang="es">
                 <Head>
                     <meta charSet="utf-8" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

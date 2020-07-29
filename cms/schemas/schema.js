@@ -9,8 +9,11 @@ import blockContent from './blockContent'
 import category from './category'
 import post from './post'
 import author from './author'
-import commonInfo from './commonInfo'
+import generalInfo from './generalInfo'
 import homePage from './homePage'
+import services from './services'
+import departments from './departments'
+import doctors from './doctors'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,13 +24,16 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    homePage,
+    services,
+    departments,
     post,
     author,
     category,
-    commonInfo,
-    homePage,
+    generalInfo,
+    doctors,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    blockContent
+    blockContent,
   ])
 })

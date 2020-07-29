@@ -194,16 +194,21 @@ video {
 }
 
 /* Header Button */
+.header-button {
+
+  transform: uppercase;
+}
 .header-button span,
 .wsmenu > .wsmenu-list > li.header-btn a {
-  background-color: #00a3c8;
+  background-color: #80c342;
   color: #fff!important;
   line-height: 30px;
   margin-top: 15px;
   margin-left: 10px;
   padding: 5px 15px 5px 15px;
+  text-transform: uppercase !important;
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px
+  -moz-border-radius: 4px;
   border-radius: 4px;
 }
 

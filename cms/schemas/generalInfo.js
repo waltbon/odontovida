@@ -1,5 +1,5 @@
 export default {
-    name: 'commonInfo',
+    name: 'generalInfo',
     title: 'Información General',
     type: 'document',
     fields: [{
@@ -9,6 +9,14 @@ export default {
       }, {
         name: 'shortAddress',
         title: 'Dirección Corta',
+        type: 'string'
+      }, {
+        name: 'shortSchedule',
+        title: 'Horarios corto',
+        type: 'string'
+      }, {
+        name: 'mainPhone',
+        title: 'Teléfono principal',
         type: 'string'
       },
     ],

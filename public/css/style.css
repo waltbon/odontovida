@@ -19,13 +19,19 @@
   01. GENERAL & BASIC STYLES
   =========================================================================== */
 
+@font-face {
+  font-family: f37Ginger;
+  src: url(../fonts/F37Ginger-Regular.otf);
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
 } 
  
 body {
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+  font-family: 'f37Ginger', Helvetica, Arial, sans-serif;
   color: #333;
   font-weight: 300;
 }
@@ -252,7 +258,7 @@ body {
 .bg-lightdark { background-color: #35363a; }
 .bg-dark { background-color: #2e2f33!important; }
 .bg-lightgrey { background-color: #f8f9fb; }
-.bg-blue { background-color: #00a3c8; }
+.bg-blue { background-color: #855c98; }
 .bg-deepblue { background-color: #004a91; }
 .bg-steelblue { background-color: #004861; }
 .bg-darkgreen { background-color: #0dc176; }
@@ -474,8 +480,8 @@ ul.content-list li:last-child {
 .btn-blue,
 .white-color .btn-blue {
   color: #fff;
-  background-color: #00a3c8;
-  border-color: #00a3c8;
+  background-color: #855c98;
+  border-color: #855c98;
 }
 
 .btn-darkgreen,
@@ -647,7 +653,7 @@ ul.content-list li:last-child {
 
 .video-btn.play-icon-white { background-color: #fff; color: #333; border-color: #fff; }
 .video-btn.play-icon-tra { background-color: transparent; color: #fff; border-color: #fff; }
-.video-btn.play-icon-blue { background-color: #00a3c8; border-color: #00a3c8; }
+.video-btn.play-icon-blue { background-color: #855c98; border-color: #855c98; }
 .video-btn.play-icon-lime { background-color: #89be19; border-color: #89be19; }
 
 /*------------------------------------------*/
@@ -854,7 +860,7 @@ span.id-color {
 .blue-color i, 
 .white-color .blue-color,
 .steelblue-color .blue-color,
-.blue-color span { color: #00a3c8; }
+.blue-color span { color: #855c98; }
 
 .darkblue-color,
 .darkblue-color h2, 
@@ -1272,7 +1278,7 @@ p.header-widget-phone {
 }
 
 #hero-1 {
-  background-image: url(../images/hero-1.jpg);
+  background-image: url(../images/temp/dental-04.jpg);
   padding-top: 30px;
 }
 
@@ -1868,7 +1874,7 @@ p.header-widget-phone {
 }
 
 .hero-12-img { 
-  background-image: url(../images/hero-12-img.jpg);
+  background-image: url(../images/temp/dental-08.jpg);
   background-repeat: no-repeat;
   background-position: center center;   
   background-size: cover;
@@ -2037,8 +2043,8 @@ p.header-widget-phone {
 }
 
 .abox-4-table.blue-table {
-  background-color: #00a3c8;
-  border: 1px solid #00a3c8;
+  background-color: #855c98;
+  border: 1px solid #855c98;
   color: #fff;
   box-shadow: none;
 }
@@ -2189,8 +2195,8 @@ td.text-right {
 }
 
 .bg-lightgrey .sbox-2:hover {
-  background-color: #00a3c8;
-  border: 1px solid #00a3c8;
+  background-color: #855c98;
+  border: 1px solid #855c98;
 }
 
 .bg-lightgrey .sbox-2:hover .sbox-2-icon,
@@ -2338,7 +2344,7 @@ td.text-right {
 /*------------------------------------------*/
 
 .sbox-2-icon {
-  color: #00a3c8;
+  color: #855c98;
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
@@ -2347,7 +2353,7 @@ td.text-right {
 }
 
 .sbox-3-icon {
-  background-color: #00a3c8;
+  background-color: #855c98;
   display: inline-block;
   width: 110px;
   height: 110px;
@@ -2403,8 +2409,8 @@ td.text-right {
 }
 
 .services-7-table.blue-table {
-  background-color: #00a3c8;
-  border: 1px solid #00a3c8;
+  background-color: #855c98;
+  border: 1px solid #855c98;
   color: #fff;
   box-shadow: none;
 }
@@ -2576,7 +2582,7 @@ td.text-right {
 /*------------------------------------------*/ 
 
 #info-8 .txt-block {
-  background-color: #00a3c8; 
+  background-color: #855c98; 
   padding: 50px 60px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -2825,8 +2831,8 @@ td.text-right {
 
 .nav-pills .nav-link.active,
 .nav-pills .nav-link.active:hover {
-  background-color: #00a3c8;
-  border-color: #00a3c8;
+  background-color: #855c98;
+  border-color: #855c98;
   color: #fff;
 }
 
@@ -2835,7 +2841,7 @@ td.text-right {
   background-color: #f8f8f8;
   color: #333;
   border: none;
-  border-right: 2px solid #00a3c8;
+  border-right: 2px solid #855c98;
 }
 
 .nav-pills .nav-link:hover {
@@ -2909,8 +2915,8 @@ td.text-right {
 .gallery-filter button:hover,
 .gallery-filter button:focus {
   background-color: transparent;
-  color: #00a3c8;
-  border-bottom: 2px solid #00a3c8;
+  color: #855c98;
+  border-bottom: 2px solid #855c98;
   outline: 0px none;
 }
 
@@ -2919,9 +2925,9 @@ td.text-right {
 /*------------------------------------------*/ 
 
 .gallery-filter button.is-checked {
-  color: #00a3c8;
+  color: #855c98;
   cursor: default;
-  border-bottom: 2px solid #00a3c8;
+  border-bottom: 2px solid #855c98;
   outline: 0px none;
 }
 
@@ -3245,7 +3251,7 @@ td.text-right {
 
 .doctor-meta span {
   display: block;
-  1color: #888;
+  color: #888;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
@@ -3365,9 +3371,10 @@ td.text-right {
 /*------------------------------------------*/
 
 #doctor-breadcrumbs {
-  background-image: url(../images/doctor-profile.jpg);
+  background-image: url(../images/temp/dental-08.jpg);
   padding-top: 130px;
   padding-bottom: 60px;
+  color: #000;
 }
 
 #doctor-breadcrumbs .doctor-data {
@@ -3484,7 +3491,7 @@ td.text-right {
 }
 
 .doctor-info .table span i {
-  color: #00a3c8;
+  color: #855c98;
   font-size: 12px;
   margin-right: 3px;
 }
@@ -4180,8 +4187,8 @@ td.text-right {
 }
 
 .post-tags-list span a:hover {
-  background-color: #00a3c8;
-  border-color: #00a3c8;
+  background-color: #855c98;
+  border-color: #855c98;
   color: #fff;
 }
 
@@ -4550,7 +4557,7 @@ p.contact-notice {
 
 .contact-form .form-control:focus {
   background-color: #fff;
-  border-color: #00a3c8;
+  border-color: #855c98;
   outline: 0px none;
   box-shadow: none;
 }
@@ -5019,8 +5026,8 @@ ul.blog-category-list li:hover {
 }
 
 .badge:hover {
-  background-color: #00a3c8;
-  border-color: #00a3c8;
+  background-color: #855c98;
+  border-color: #855c98;
 }
 
 .badge:hover a {
@@ -5044,8 +5051,8 @@ ul.blog-category-list li:hover {
 }
 
 .sidebar-table.blue-table {
-  background-color: #00a3c8;
-  border: 1px solid #00a3c8;
+  background-color: #855c98;
+  border: 1px solid #855c98;
   color: #fff;
   box-shadow: none;
 }
@@ -5192,7 +5199,7 @@ ul.blog-category-list li:hover {
 }
 
 .breadcrumb-item a:hover {
-  color: #00a3c8;
+  color: #855c98;
 }
 
 .breadcrumb-item.active {
@@ -5274,8 +5281,8 @@ ul.blog-category-list li:hover {
 .primary-theme .page-link:hover,
 .primary-theme .page-link:focus,
 .primary-theme .page-item.active .page-link {
-  background-color: #00a3c8;
-  border-color: #00a3c8;
+  background-color: #855c98;
+  border-color: #855c98;
 }
 
 
@@ -5334,7 +5341,7 @@ ul.blog-category-list li:hover {
 
 .appointment-form .form-control:focus {
   background-color: #fff;
-  border-color: #00a3c8;
+  border-color: #855c98;
   outline: 0px none;
   box-shadow: none;
 }
@@ -5449,14 +5456,14 @@ ul.blog-category-list li:hover {
 
 #faqs-page #accordion [data-toggle="collapse"].collapsed:after,
 #faqs-page #accordion [data-toggle="collapse"]:after {
-  color: #00a3c8;
+  color: #855c98;
   font-size: 13px;
   top: 25px;
   right: 5px;
 }
 
 #faqs-page #accordion [data-toggle="collapse"].collapsed:after {
-  color: #00a3c8;
+  color: #855c98;
   content: "\f067";
 }
 
@@ -5654,7 +5661,7 @@ nav a#pull {
 }
 
 #stlChanger .chBut {
-  background: #00a3c8;
+  background: #855c98;
   width: 50px;
   height: 50px;
   position: absolute;
@@ -5662,7 +5669,7 @@ nav a#pull {
   left: 0;
   z-index: 1000000;
   text-align: center;
-  border: 1px solid #00a3c8;
+  border: 1px solid #855c98;
   border-left: none;
   border-radius: 6px 0px 0px 6px;
   -webkit-transition: all 300ms ease-in-out;

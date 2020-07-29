@@ -10,5 +10,16 @@ class OdontovidaApp extends App {
     }
 }
 
+OdontovidaApp.getInitialProps = async ({ctx, Component }): Promise<AppInitialProps> => {
+    let props = {} as any; 
+
+    if (Component.getInitialProps) {
+        props = await Component.getInitialProps(ctx) as any;
+    }
+    return {
+        pageProps: props
+    };
+}
+
 
 export default OdontovidaApp

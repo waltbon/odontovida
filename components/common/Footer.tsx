@@ -12,7 +12,7 @@ export default class extends React.Component {
                             <div className="footer-info mb-40">
                                 {/* Footer Logo */}
                                 {/* For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80  pixels) */}
-                                <img src="images/footer-logo.png" width={180} height={40} alt="footer-logo" />
+                                <img src="/images/logo.jpg" width={220} height={80} alt="footer-logo" />
                                 {/* Email */}
                                 <p className="foo-email">E: <a href="mailto:yourdomain@mail.com">hello@yourdomain.com</a></p>
                                 {/* Phone */}
@@ -96,7 +96,7 @@ export default class extends React.Component {
                     <div className="bottom-footer">
                         <div className="row">
                             <div className="col-md-12">
-                                <p className="footer-copyright">© 2019 <span>MedService</span>. All Rights Reserved</p>
+                                <p className="footer-copyright">© 2020 <span>Clínica Espcializada Odontovida</span> | Desarrollado por <a href="https://cabanadata.com?ref=odontovida">cabanadata.com</a> </p>
                             </div>
                         </div>
                     </div>

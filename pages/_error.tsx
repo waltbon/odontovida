@@ -1,5 +1,5 @@
 import { NextPageContext } from "next";
-import Layout from './components/common/Layout';
+import Layout from '../components/common/Layout';
 
 const Error = ({ statusCode, message = '' }) => {
 
