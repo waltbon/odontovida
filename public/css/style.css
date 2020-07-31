@@ -886,7 +886,7 @@ span.id-color {
 .steelblue-color li,
 .steelblue-color i, 
 .white-color .steelblue-color,
-.steelblue-color span { color: #004861; }
+.steelblue-color span { color: #414141; }
 
 .lime-color,
 .lime-color h2, 
@@ -944,7 +944,7 @@ span.id-color {
 .loader-inner {
   width: 256px;
   height: 38px;
-  background: url(../images/loader.gif) center center no-repeat;  
+  /* background: url(../images/loader.gif) center center no-repeat;   */
 }
 
 
@@ -4617,6 +4617,11 @@ p.contact-notice {
 /* ==========================================================================
   20. FOOTER
   =========================================================================== */
+
+.footer {
+  margin-top: 28px;
+  background-color: rgb(240, 240, 240);
+}
 
 #footer-1 .footer-box {
   padding-left: 10%;

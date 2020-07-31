@@ -8,10 +8,10 @@
 		/*	Preloader
 		/*----------------------------------------------------*/
 		
-		var preloader = $('#loader-wrapper'),
-			loader = preloader.find('.loader-inner');
-			loader.fadeOut();
-			preloader.delay(400).fadeOut('slow');
+		// var preloader = $('#loader-wrapper'),
+		// 	loader = preloader.find('.loader-inner');
+		// 	loader.fadeOut();
+		// 	preloader.delay(400).fadeOut('slow');
 				
 		// $(window).stellar({});
 		

@@ -44,7 +44,9 @@ export default class OdontovidaDocument extends Document {
                 </Head>
                 <body>
                     <div id="loader-wrapper">
-                        <div id="loader"><div className="loader-inner" /></div>
+                        <div id="loader"><div className="loader-inner" />
+                            {/* <img src="/images/logo.jpg" width="250px" alt=""/> */}
+                        </div>
                     </div>
 
                     <Main />
@@ -56,7 +58,7 @@ export default class OdontovidaDocument extends Document {
                     <script src="/js/jquery.appear.js"></script>
                     <script src="/js/jquery.stellar.min.js"></script>
                     <script src="/js/menu.js"></script>
-                    <script src="/js/sticky.js"></script>
+                    {/* <script src="/js/sticky.js"></script> */}
                     <script src="/js/jquery.scrollto.js"></script>
                     <script src="/js/materialize.js"></script>
                     <script src="/js/owl.carousel.min.js"></script>
@@ -71,11 +73,7 @@ export default class OdontovidaDocument extends Document {
                     <script src="/js/jquery.validate.min.js"></script>
                     <script src="/js/jquery.ajaxchimp.min.js"></script>
                     <script src="/js/wow.js"></script>
-
                     <script src="/js/custom.js"></script>
-
-                    <script>new WOW().init();</script>
-
                     <NextScript />
                 </body>
             </Html>

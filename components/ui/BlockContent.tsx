@@ -5,8 +5,9 @@ export default class extends React.Component<{
     blocks: any
 }> {
     render() {
-        return (  
+        return (<React.Fragment>
             <BlockContent blocks={this.props.blocks} />
+        </React.Fragment>
         )
     }
 }

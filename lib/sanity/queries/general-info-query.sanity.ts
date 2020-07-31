@@ -9,7 +9,8 @@ export default async (): Promise<IGeneralInfo> => {
         contactEmail,
         shortSchedule,
         shortAddress,
-        mainPhone
+        mainPhone,
+        socialMedia
     }`);
     if (!data) {
         return null;

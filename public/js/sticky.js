@@ -1,6 +1,6 @@
 // Create a clone of the menu, right next to original.
 
-$(document).ready(function () {
+
   
   $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
   
@@ -28,5 +28,3 @@ $(document).ready(function () {
       $('.original').css('visibility','visible');
     }
   }
-
-})

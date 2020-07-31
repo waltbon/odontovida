@@ -52,15 +52,15 @@ export default class extends React.Component<Props, State> {
                         {/* MEGAMENU FEATURED NEWS */}
                         <div className="col-lg-5 col-md-12 col-xs-12">
                             {/* Title */}
-                            <h3 className="title">Featured News:</h3>
+                            <h3 className="title">{this.state.currentService?.title}</h3>
                             {/* Image */}
                             <div className="fluid-width-video-wrapper"><img src="/images/temp/dental-02.jpg" alt="featured-news" /></div>
 
                             {
                                 this.state.currentService && 
                                 (<>
-                                    <h5 className="h5-xs"><a href="#">{this.state.currentService.title}</a></h5>
                                     <p className="wsmwnutxt">{this.state.currentService.shortDescription}</p>
+                                    <a href="#">Más información...</a>
                                 </>)
                             }
                         </div>	{/* END MEGAMENU FEATURED NEWS */}
