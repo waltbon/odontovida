@@ -60,7 +60,7 @@ export default class extends React.Component<Props, State> {
                                 this.state.currentService && 
                                 (<>
                                     <h5 className="h5-xs"><a href="#">{this.state.currentService.title}</a></h5>
-                                    <p className="wsmwnutxt">{this.state.currentService.description}</p>
+                                    <p className="wsmwnutxt">{this.state.currentService.shortDescription}</p>
                                 </>)
                             }
                         </div>	{/* END MEGAMENU FEATURED NEWS */}

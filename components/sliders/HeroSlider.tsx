@@ -25,9 +25,9 @@ export default class extends React.Component<Props> {
                         </div>
                     </div>	{/* END HERO TEXT */}
                     {/* HERO IMAGE */}
-                    <div className="col-md-4 col-lg-5 col-xl-6">
+                    <div className="col-md-4 col-lg-5 col-xl-6" style={{minHeight: "500px"}}>
                         <div className="hero-1-img text-center">
-                            <img className="img-fluid" src="/images/temp/dental-06.jpg"  width="400" alt="hero-image" />
+                            {/* <img className="img-fluid" src="/images/temp/dental-06.jpg"  width="400" alt="hero-image" /> */}
                         </div>
                     </div>
                 </div>    {/* End row */}

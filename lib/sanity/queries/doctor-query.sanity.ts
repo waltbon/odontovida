@@ -19,7 +19,6 @@ export default async (slug: string): Promise<IDoctor> => {
     if (!data) {
         return null;
     }
-    console.log("pictureUrl", data.pictureUrl)
     return {
         title: data.title,
         description: data.description,

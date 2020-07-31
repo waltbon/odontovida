@@ -9,6 +9,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'subtitle',
+      title: 'Sub título',
+      type: 'string'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -22,5 +27,16 @@ export default {
       title: 'Descripción corta',
       type: 'string'
     },
+    {
+      name: 'body',
+      title: 'Contenido',
+      type: 'blockContent'
+    },
+    {
+      title: 'Doctor',
+      name: 'doctor',
+      type: 'reference',
+      to: [{type: 'doctors'}]
+    }
   ]
 }

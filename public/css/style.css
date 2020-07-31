@@ -1938,10 +1938,10 @@ p.header-widget-phone {
 /*  ABOUT BOX
 /*------------------------------------------*/
 
-#abox-1 { background-color: #36a8eb; border-radius: 6px 0 0 6px; }
-#abox-2 { background-color: #088edd; }
-#abox-3 { background-color: #1977cc; }
-#abox-4 { background-color: #1063af;  border-radius: 0 6px 6px 0; }
+#abox-1 { background-color: #ad7ac5; border-radius: 6px 0 0 6px; }
+#abox-2 { background-color: #855c98; }
+#abox-3 { background-color: #5e416b; }
+#abox-4 { background-color: #32223a;  border-radius: 0 6px 6px 0; }
 
 .abox-1 {
   height: 300px;
@@ -5162,7 +5162,7 @@ ul.blog-category-list li:hover {
   =========================================================================== */
 
 #breadcrumb {
-  background-image: url(../images/breadcrumb.jpg);
+  background-image: url(../images/temp/dental-04.jpg);
   background-position: center center;
 }
 

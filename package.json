@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^1.149.18",
     "@sanity/image-url": "^0.140.19",
     "axios": "^0.19.2",

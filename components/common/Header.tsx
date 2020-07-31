@@ -19,7 +19,7 @@ export default class extends React.Component<Props> {
             <header id="header-2" className="header ">
                 <div className="wsmobileheader clearfix">
                     <a id="wsnavtoggle" className="wsanimated-arrow"><span /></a>
-                    <span className="smllogo"><img src="/images/logo.jpg" width={180} height={40} alt="mobile-logo" /></span>
+                    <span className="smllogo"><img src="/images/logo.jpg" width={200} height={40} alt="mobile-logo" /></span>
                     <a href="tel:123456789" className="callusbtn"><i className="fas fa-phone" /></a>
                 </div>
 
@@ -47,7 +47,7 @@ export default class extends React.Component<Props> {
                             {/* LOGO IMAGE */}
                             {/* For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) */}
                             <div className="col-md-5 col-xl-6">
-                                <div className="desktoplogo"><a href="#hero-9"><img src="images/logo.jpg" width={160} height={65} alt="header-logo" /></a></div>
+                                <div className="desktoplogo"><a href="/"><img src="/images/logo.jpg" width={180} height={65} alt="header-logo" /></a></div>
                             </div>
                             {/* WIDGETS */}
                             <div className="col-md-7 col-xl-6">
@@ -92,7 +92,7 @@ export default class extends React.Component<Props> {
                     <div className="wsmainwp clearfix">
                         {/* LOGO IMAGE */}
                         {/* For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) */}
-                        <div className="desktoplogo"><a href="#hero-9"><img src="images/logo.png" width={180} height={40} alt="header-logo" /></a></div>
+                        <div className="desktoplogo"><a href="#hero-9"><img src="/images/logo.png" width={180} height={40} alt="header-logo" /></a></div>
                         {/* MAIN MENU */}
                         <nav className="wsmenu clearfix">
                             <ul className="wsmenu-list">
