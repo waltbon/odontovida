@@ -45,5 +45,66 @@ export default {
         title: 'Párrafo secundario',
         type: 'string'
       }]
-    }],
+    }, {
+      title: 'Items de sección de introducción',
+      name: 'aboutSection',
+      type: 'array',
+      of: [{
+        title: 'Item',
+        name: 'item',
+        type: 'object',
+        fields: [{
+          type: 'string',
+          title: 'Título',
+          name: 'title'
+        }, {
+          type: 'string',
+          title: 'Subtítulo',
+          name: 'subtitle'
+        }, {
+          type: 'text',
+          title: 'Párrafo',
+          name: 'paragraph'
+        }]
+      }]
+    }, {
+      title: 'Sección de bienvenida',
+      name: 'welcomeSection',
+      type: 'object',
+      collapsible: true,
+      collapsed: true,
+      required: true,
+      fields: [{
+        name: 'title',
+        title: 'Título',
+        type: 'string'
+      }, {
+        name: 'subtitle',
+        title: 'Subtítulo',
+        type: 'string'
+      }, {
+        name: 'description',
+        title: 'Descripción',
+        type: 'text'
+      }]
+    }, {
+      title: 'Testimoniales',
+      name: 'testimonials',
+      type: 'array',
+      of: [{
+        title: 'Testimonial',
+        name: 'testimonial',
+        type: 'object',
+        fields: [{
+          type: 'string',
+          title: 'Nombre de la persona',
+          name: 'name'
+        }, {
+          type: 'text',
+          title: 'Texto',
+          name: 'text'
+        }]
+      }]
+    }
+  ]
 }

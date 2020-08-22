@@ -174,7 +174,7 @@ video {
 }
 
 .wsmenu >.wsmenu-list > li:hover > a {
-  color: #00a3c8;
+  color: #80c342;
 }
 
 .wsmenu > .wsmenu-list > li > a {
@@ -206,7 +206,7 @@ video {
   margin-top: 15px;
   margin-left: 10px;
   padding: 5px 15px 5px 15px;
-  text-transform: uppercase !important;
+  /* text-transform: uppercase !important; */
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -450,7 +450,7 @@ video {
 }
 
 .wsmenu>.wsmenu-list>li>ul.sub-menu>li>a:hover {
-  background-color: #00a3c8;
+  background-color: #80c342;
   color: #fff;
   padding: 8px 15px 8px 23px;
 }
@@ -502,7 +502,7 @@ video {
 }
 
 .wsmenu > .wsmenu-list > li > ul.sub-menu > li > ul.sub-menu > li >a:hover {
-  background-color: #00a3c8;
+  background-color: #80c342;
   color: #fff;
   padding: 8px 15px 8px 23px;
 }
@@ -553,7 +553,7 @@ video {
 }
 
 .wsmenu>.wsmenu-list>li>ul.sub-menu>li>ul.sub-menu>li>ul.sub-menu>li>a:hover {
-  background-color: #00a3c8;
+  background-color: #80c342;
   color: #fff;
   padding: 8px 15px 8px 23px;
 }
@@ -642,7 +642,7 @@ video {
   text-align: center;
   white-space: nowrap;
   text-align: left;
-  border-bottom: 1px dashed #c0c0c0;
+  border-bottom: 1px solid #ececec;
 }
 
 .wsmenu>.wsmenu-list>li>.wsmegamenu .link-list li.title,
@@ -671,7 +671,7 @@ video {
 }
 
 .wsmenu>.wsmenu-list>li>.wsmegamenu .link-list li a:hover {
-  color: #00a3c8;
+  color: #80c342;
   padding: 15px 0 15px 10px;
 }
 

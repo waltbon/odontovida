@@ -1,8 +1,7 @@
 import Layout from '../../components/common/Layout';
 import { NextPage } from 'next';
-import { CommonAppProps } from '../../utils/interfaces/pages/app';
 import { IService } from '../../utils/interfaces/pages/service.interface';
-import { fetchSingleService } from '../../lib/sanity/queries';
+import { fetchServices } from '../../lib/sanity/queries';
 import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
 import ServiceSidebar from '../../components/service/ServiceSidebar';
 import BlockContent from '../../components/ui/BlockContent';
@@ -21,7 +20,7 @@ const ServicePage: NextPage<Props> = ({
         text: service.title,
         url: `/servicios/${service.slug}`,
     }]
-    return (<>
+    return (<Layout>
         <MainInfoContext.Consumer>
             {
                 value => (<>
@@ -36,8 +35,8 @@ const ServicePage: NextPage<Props> = ({
                                         <h3 className="h3-md blue-color">{service.title}</h3>
                                         <h4 className="h4-sm blue-color">{service.subtitle}</h4>
 
-                                        <BlockContent blocks={service.body} />
                                     </div>
+                                        <BlockContent blocks={service.body} />
                                 </div>
 
                                 <div id="sidebar" className="col-lg-4">
@@ -49,13 +48,13 @@ const ServicePage: NextPage<Props> = ({
                 </>)
             }
         </MainInfoContext.Consumer>
-    </>);
+    </Layout>);
 }
 
 
 ServicePage.getInitialProps = async ({ req, query }): Promise<any> => {
     const { servicioslug } = query;
-    const service = await fetchSingleService(servicioslug as string);
+    const service = await fetchServices.fetchSingleService(servicioslug as string);
     return {
         service
     }

@@ -15,7 +15,12 @@ export default {
       options: {
         source: 'title',
         maxLength: 96
-      }
+      },
+    },
+    {
+      name: 'description',
+      title: 'Descripción',
+      type: 'text',
     }
   ]
 }

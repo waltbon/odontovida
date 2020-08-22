@@ -127,33 +127,33 @@
 		/*	Services Rotator
 		/*----------------------------------------------------*/
 	
-		var owl = $('.services-holder');
-			owl.owlCarousel({
-				items: 4,
-				loop:true,
-				autoplay:true,
-				navBy: 1,
-				autoplayTimeout: 4500,
-				autoplayHoverPause: false,
-				smartSpeed: 1500,
-				responsive:{
-					0:{
-						items:1
-					},
-					767:{
-						items:1
-					},
-					768:{
-						items:2
-					},
-					991:{
-						items:3
-					},
-					1000:{
-						items:4
-					}
-				}
-		});
+		// var owl = $('.services-holder');
+		// 	owl.owlCarousel({
+		// 		items: 4,
+		// 		loop:true,
+		// 		autoplay:true,
+		// 		navBy: 1,
+		// 		autoplayTimeout: 4500,
+		// 		autoplayHoverPause: false,
+		// 		smartSpeed: 1500,
+		// 		responsive:{
+		// 			0:{
+		// 				items:1
+		// 			},
+		// 			767:{
+		// 				items:1
+		// 			},
+		// 			768:{
+		// 				items:2
+		// 			},
+		// 			991:{
+		// 				items:3
+		// 			},
+		// 			1000:{
+		// 				items:4
+		// 			}
+		// 		}
+		// });
 
 
 		/*----------------------------------------------------*/

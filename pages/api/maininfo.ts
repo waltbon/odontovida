@@ -2,8 +2,8 @@ import * as fetchCMS from '../../lib/sanity/queries';
 
 export default async (req, res) => {
     const data = await Promise.all([
-        fetchCMS.fetchServices(), 
-        fetchCMS.fetchDepartments(),
+        fetchCMS.fetchServices.fetchAllServicesDetails(), 
+        fetchCMS.fetchDepartments.fetchAllDepartments(),
         fetchCMS.fetchGeneralInfo(),
         fetchCMS.fetchAllDoctors()
     ]);

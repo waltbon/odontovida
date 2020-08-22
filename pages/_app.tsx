@@ -1,8 +1,8 @@
 import React from 'react';
 import App, { AppInitialProps } from 'next/app';
 import { CommonAppProps } from '../utils/interfaces/pages/app';
-import MainInfoProvider from '../contexts/MainInfoContext';
-import Layout from '../components/common/Layout';
+import { MainInfoContextProvider } from '../contexts/MainInfoContext';
+import { MainInfoApi } from '../lib/api';
 declare var WOW: any;
 
 class OdontovidaApp extends App<CommonAppProps> {
@@ -13,29 +13,26 @@ class OdontovidaApp extends App<CommonAppProps> {
 
     render() {
         const { Component, pageProps } = this.props;
-        return (
-            <MainInfoProvider value={{}}>
-                <Layout>
-                    <Component {...pageProps} />)
-                </Layout>
-            </MainInfoProvider>)
+        return (<>
+            <MainInfoContextProvider value={{}}>
+                <Component {...pageProps} />
+            </MainInfoContextProvider>
+        </>)
     }
 }
 
 OdontovidaApp.getInitialProps = async ({ ctx, Component }): Promise<AppInitialProps> => {
-    let props = {} as CommonAppProps;
-    
+    let props = {} as any;
+
     if (Component.getInitialProps) {
         props = await Component.getInitialProps(ctx) as any;
     }
-    
-    // const mainInfo = await MainInfoApi.getMainInfo();
-    props = {
-        ...props
-    };
 
     return {
-        pageProps: props
+        pageProps: {
+            ...props,
+            ...await MainInfoApi.getMainInfo()
+        }
     };
 }
 

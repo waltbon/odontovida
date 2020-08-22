@@ -8,4 +8,6 @@ export interface IService {
     shortDescription: string;
     doctor: IDoctor;
     body: any;
+    mainImage: any;
+    mainImageUrl: any;
 }

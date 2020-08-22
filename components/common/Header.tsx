@@ -17,7 +17,7 @@ export default class extends React.Component {
                         <header id="header-2" className="header ">
                             <div className="wsmobileheader clearfix">
                                 <a id="wsnavtoggle" className="wsanimated-arrow"><span /></a>
-                                <span className="smllogo"><img src="/images/logo.jpg" width={200} height={40} alt="mobile-logo" /></span>
+                                <span className="smllogo"><img src="/images/logo.jpg" width={130} height={40} alt="mobile-logo" /></span>
                                 <a href="tel:123456789" className="callusbtn"><i className="fas fa-phone" /></a>
                             </div>
 

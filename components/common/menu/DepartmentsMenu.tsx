@@ -34,7 +34,7 @@ export default class extends React.Component<Props, State> {
                         <li className="title">Nuestros Especialistas:</li>
                         {
                             Array.isArray(this.props.doctors) && this.props.doctors.map(dr =>
-                                (<li key={dr._id}><a href={`/especialidades/xyz/doctores/${dr.slug}`}>{dr.fullname}</a></li>))
+                                (<li key={dr._id}><a href={`/especialidades/${dr.department ? dr.department.slug : 'general'}/especialistas/${dr.slug}`}>{dr.fullname}</a></li>))
                         }
                     </ul>
                 </div>

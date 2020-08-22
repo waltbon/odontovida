@@ -28,6 +28,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'mainImage',
+      title: 'Imagen principal',
+      type: 'image'
+    },
+    {
       name: 'body',
       title: 'Contenido',
       type: 'blockContent'

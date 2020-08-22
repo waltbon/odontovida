@@ -12,9 +12,8 @@ export default class extends React.Component<Props> {
                 <div className="row">
                     <div className="col-md-7 offset-md-5">
                         <div className="doctor-data dark-color">
-                            {/* Name */}
                             <h2 className="h2-xs">{this.props.doctor.fullname}</h2>
-                            <h5 className="h5-md">Neurologist / Epilepsy Specialist / Cardiologist</h5>
+                            <h5 className="h5-md">{`${this.props.doctor.department?.title} / ${this.props.doctor.title}`}</h5>
                         </div>
                     </div>
                 </div>   {/* End row */}

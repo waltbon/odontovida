@@ -8,4 +8,18 @@ export interface IHomePage {
         subtitle: string;
         paragraph: string;
     }
+    welcomeSection: {
+        title: string;
+        subtitle: string;
+        description: string;
+    },
+    aboutSection: [{
+        title: string;
+        subtitle: string;
+        paragraph: string;
+    }],
+    testimonials: [{
+        name: string;
+        text: string;
+    }]
 }

@@ -1,10 +1,7 @@
 import { fetchQuerySanity } from '../client'
 import { IDoctor } from '../../../utils/interfaces/pages/doctor.interface';
-import { SanityImageAssetDocument } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
 
-interface IDoctorSanity extends IDoctor {
-}
+interface IDoctorSanity extends IDoctor {}
 
 export default async (slug: string): Promise<IDoctor> => {
     console.log("slug", slug)
@@ -13,7 +10,9 @@ export default async (slug: string): Promise<IDoctor> => {
         title,
         fullname,
         description,
+        department->{_id,slug,title},
         "pictureUrl": personalImage.asset->url,
+        titles,
         _id
     }`);
     if (!data) {
@@ -25,6 +24,8 @@ export default async (slug: string): Promise<IDoctor> => {
         _id: data._id,
         fullname: data.fullname,
         pictureUrl: data.pictureUrl,
-        slug: data.slug
+        slug: data.slug,
+        department: data.department,
+        titles: data.titles
     };
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { IService } from '../../../utils/interfaces/pages/service.interface';
-import { IDepartment } from '../../../utils/interfaces/pages/department.interface';
+import { urlFor } from '../../../lib/sanity/imageBuilder';
+import { generateServiceUrl } from '../../../utils/common/urls';
 
 interface Props {
     services: IService[]
@@ -41,33 +42,35 @@ export default class extends React.Component<Props, State> {
             <div className="wsmegamenu clearfix">
                 <div className="container">
                     <div className="row">
-                        {/* MEGAMENU QUICK LINKS */}
-                        <ul className="col-lg-3 col-md-12 col-xs-12 link-list">
-                            <li className="title">Tratamientos:</li>
+
+                        <ul className="col-lg-3 col-md-10 col-xs-12 link-list">
+                            <li className="title">¿Qué tratamientos ofrecemos?</li>
                             {
-                                Array.isArray(this.props.services) && this.props.services.map(service => 
-                                    (<li key={service.slug} onMouseOver={this.onMouseOverHandler}><a id={service.slug} href={`/servicios/${service.slug}`}>{service.title}</a></li>))                                
+                                Array.isArray(this.props.services) && this.props.services.map(service =>
+                                    (<li key={service.slug} onMouseOver={this.onMouseOverHandler}><a id={service.slug} href={generateServiceUrl(this.state.currentService)}>{service.title}</a></li>))
                             }
                         </ul>
-                        {/* MEGAMENU FEATURED NEWS */}
-                        <div className="col-lg-5 col-md-12 col-xs-12">
-                            {/* Title */}
-                            <h3 className="title">{this.state.currentService?.title}</h3>
-                            {/* Image */}
-                            <div className="fluid-width-video-wrapper"><img src="/images/temp/dental-02.jpg" alt="featured-news" /></div>
 
-                            {
-                                this.state.currentService && 
-                                (<>
-                                    <p className="wsmwnutxt">{this.state.currentService.shortDescription}</p>
-                                    <a href="#">Más información...</a>
-                                </>)
-                            }
-                        </div>	{/* END MEGAMENU FEATURED NEWS */}
-                        {/* MEGAMENU LATEST NEWS */}
-                    </div>  {/* End row */}
-                </div>  {/* End container */}
-            </div>  {/* End wsmegamenu */}
+                        <div className="col-lg-8 col-md-12 col-xs-12">
+                            <div className="fluid-width-video-wrapper">
+                                {
+                                    this.state.currentService &&
+                                    (<div className="row">
+                                        <div className="col-md-5">
+                                            <img src={this.state.currentService.mainImageUrl} alt="featured-news" />
+                                        </div>
+                                        <div className="col-md-7">
+                                            <h2 className="title">{this.state.currentService?.title}</h2>
+                                            <p className="wsmwnutxt">{this.state.currentService.shortDescription}</p>
+                                            <a className="btn btn-blue text-white" href={generateServiceUrl(this.state.currentService)}>Ir a información detallada</a>
+                                        </div>
+                                    </div>)
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </li>
         )
     }

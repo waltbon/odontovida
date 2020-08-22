@@ -10,13 +10,23 @@ interface IHomePageSanity {
         subtitle: string;
         paragraph: string;
     }
+    welcomeSection: {
+        title: string;
+        subtitle: string;
+        description: string;
+    }
+    aboutSection: [{
+        title: string;
+        subtitle: string;
+        paragraph: string;
+    }],
+    testimonials: [{
+        name: string;
+        text: string;
+    }]
 }
 
 export default async (): Promise<IHomePage> => {
     const data = await fetchQuerySanity<IHomePageSanity>(`*[_type == "homePage"][0]`);
-    return {
-        seo: data.seo,
-        title: data.title,
-        mainHeader: data.mainHeader
-    };
+    return data;
 }

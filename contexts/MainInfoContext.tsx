@@ -3,69 +3,81 @@ import { IGeneralInfo } from '../utils/interfaces/pages/general-info.interface';
 import { IService } from '../utils/interfaces/pages/service.interface';
 import { IDepartment } from '../utils/interfaces/pages/department.interface';
 import { IDoctor } from '../utils/interfaces/pages/doctor.interface';
-import { MainInfoApi } from '../lib/api';
 declare var $: any;
 
 interface MainInfo {
     isLoading: boolean;
+    isLoaded: boolean;
     generalInfo: IGeneralInfo;
     services: IService[];
     departments: IDepartment[];
     doctors: IDoctor[];
+    principalDoctor: IDoctor;
 }
  
 export const MainInfoContext = createContext<MainInfo>({
-    isLoading: true,
+    isLoading: false,
+    isLoaded: false,
     services: [],
     departments: [],
     doctors: [],
-    generalInfo: {
-        contactEmail: '',
-        mainPhone: '',
-        shortAddress: '',
-        shortSchedule: '',
-        socialMedia: {
-            facebook: '',
-            instagram: ''
-        }
-    }
-})
+    principalDoctor: null,
+    generalInfo: null
+});
 
-export default ({value, children}) => {
-    const [isLoading = true, setIsLoading] = useState<boolean>();
-    const [generalInfo, setGeneralInfo] = useState<IGeneralInfo>();
-    const [doctors, setDoctors] = useState<IDoctor[]>();
-    const [departments, setDepartments] = useState<IDepartment[]>();
-    const [services, setServices] = useState<IService[]>();
+export const MainInfoContextProvider = ({value, children}) => {
+    const {props} = children;
+    const cpGeneralInfo = props?.generalInfo || null;
+    const cpDoctors = props?.allDoctors || [];
+    const cpdepartments = props?.departments || [];
+    const cpServices = props?.services || [];
 
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isLoaded, setIsLoaded] = useState<boolean>(false);
+    const [generalInfo, setGeneralInfo] = useState<IGeneralInfo>(cpGeneralInfo);
+    const [doctors, setDoctors] = useState<IDoctor[]>(cpDoctors);
+    const [departments, setDepartments] = useState<IDepartment[]>(cpdepartments);
+    const [services, setServices] = useState<IService[]>(cpServices);
+    const [principalDoctor, setPrincipalDoctor] = useState<IDoctor>(null);
+    
     useEffect(() => {
-        if (!isLoading) {
+        if (isLoading) {
             return;
         }
-        console.log('Info loaded not true');
+
+        setIsLoading(true)    
+        setGeneralInfo(props.generalInfo);
+        setDoctors(props.allDoctors);
+        setServices(props.services);
+        setDepartments(props.departments);
         loadInfo().then();
     });
-
+    
     const loadInfo = async () => {
-        const mainInfo = await MainInfoApi.getMainInfo();
-        setGeneralInfo(mainInfo.generalInfo);
-        setDoctors(mainInfo.allDoctors);
-        setServices(mainInfo.services);
-        setDepartments(mainInfo.departments);
-        setIsLoading(false);
+        if (!doctors) {
+            return;
+        }
+        const principal = doctors.find(dr=> dr.fullname.toLowerCase().includes('step'));
+        if (principal) {
+            setPrincipalDoctor(principal);
+        }
 
+        setIsLoaded(true);
         var preloader = $('#loader-wrapper'),
         loader = preloader.find('.loader-inner');
         loader.fadeOut();
         preloader.delay(500).fadeOut('slow');
+        setIsLoading(false);
     }
 
     return <MainInfoContext.Provider 
         value={{
             isLoading,
+            isLoaded,
             generalInfo,
             services,
             departments,
-            doctors
+            doctors,
+            principalDoctor
         }}>{children}</MainInfoContext.Provider>
 }

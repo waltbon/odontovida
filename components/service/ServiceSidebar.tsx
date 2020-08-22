@@ -13,29 +13,32 @@ interface Props {
 export default class extends React.Component<Props> {
     render() {
         return (<>
-            <div id="txt-widget" className="sidebar-div mb-50">
-                {/* Title */}
-                <h5 className="h5-sm steelblue-color">Nuestro especialista</h5>
-                {/* Head of Clinic */}
-                <div className="txt-widget-unit mb-15 clearfix d-flex align-items-center">
-                    {/* Avatar */}
-                    <div className="txt-widget-avatar">
-                        <img src="https://pbs.twimg.com/profile_images/703321160889585664/v3XbO7MU_400x400.jpg" alt="testimonial-avatar" />
+            {
+                this.props.doctor &&
+                <div id="txt-widget" className="sidebar-div mb-50">
+                    {/* Title */}
+                    <h5 className="h5-sm steelblue-color">Especialista</h5>
+                    {/* Head of Clinic */}
+                    <div className="txt-widget-unit mb-15 clearfix d-flex align-items-center">
+                        {/* Avatar */}
+                        <div className="txt-widget-avatar">
+                            {/* <img src="https://pbs.twimg.com/profile_images/703321160889585664/v3XbO7MU_400x400.jpg" alt="testimonial-avatar" /> */}
+                        </div>
+
+                        <div className="txt-widget-data">
+                            <h5 className="h5-md steelblue-color">{this.props.doctor.fullname}</h5>
+                            <span>{this.props.doctor.title}</span>
+
+                            <div className="lime-color pt-2">
+                                <a>Ir a su biografía</a>
+                            </div>
+                        </div>
                     </div>
-                    {/* Data */}
-                    <div className="txt-widget-data">
-                        <h5 className="h5-md steelblue-color">{this.props.doctor.fullname}</h5>
-                        <span>{this.props.doctor.title}</span>
-                        <p className="blue-color">1-800-1234-567</p>
-                    </div>
-                </div>	{/* End Head of Clinic */}
-                {/* Text */}
-                <p className="p-sm">
-                    <BlockContent blocks={this.props.doctor.description} />
-                </p>
-                {/* Button */}
-                <a href="about.html" className="btn btn-blue blue-hover">Learn More</a>
-            </div>	{/* END TEXT WIDGET */}
+                    {/* Text */}
+
+                    {/* Button */}
+                </div>
+            }
 
             {/* SIDEBAR TABLE */}
             <div className="sidebar-table sidebar-div mb-50">
