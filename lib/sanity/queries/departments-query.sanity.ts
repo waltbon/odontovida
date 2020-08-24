@@ -25,7 +25,8 @@ export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
             title: service.title,
             slug: service.slug,
             description: service.description,
-            _id: service._id
+            _id: service._id,
+            body: service.body
         }
     });
 }
