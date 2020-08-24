@@ -6,6 +6,7 @@ interface IDepartmentSanity {
     title: string;
     description: string;
     slug: any;
+    body: any;
 }
 
 export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
@@ -34,6 +35,7 @@ export const fetchSingleDepartment = async (slug: string): Promise<IDepartment> 
         title,
         description,
         'slug': slug.current,
+        body,
         _id
     }`);
     if (!data) {
@@ -44,6 +46,7 @@ export const fetchSingleDepartment = async (slug: string): Promise<IDepartment> 
         title: data.title,
         slug: data.slug,
         description: data.description,
+        body: data.body,
         _id: data._id
     }
 }

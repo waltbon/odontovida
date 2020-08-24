@@ -1277,7 +1277,12 @@ p.header-widget-phone {
   z-index: 3;
 }
 
-#hero-1 {
+/* #hero-1 {
+  background-image: url(../images/temp/dental-11.jpg);
+  padding-top: 30px;
+} */
+
+#hero-2 {
   background-image: url(../images/temp/dental-10.jpg);
   padding-top: 30px;
 }

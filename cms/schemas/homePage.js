@@ -44,6 +44,10 @@ export default {
         name: 'paragraph',
         title: 'Párrafo secundario',
         type: 'string'
+      }, {
+        name: 'mainImage',
+        title: 'Imagen principal',
+        type: 'image'
       }]
     }, {
       title: 'Items de sección de introducción',

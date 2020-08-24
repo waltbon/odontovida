@@ -6,6 +6,10 @@ export default class extends React.Component<{
     subtitle: string;
     description: string;
     doctorPrincipal: IDoctor;
+    callToAction: {
+        url: string;
+        text: string;
+    }
 }> {
     render() {
         return (
@@ -31,8 +35,12 @@ export default class extends React.Component<{
                                     <div className="singnature mt-35">
                                         <p className="p-small mb-15">
                                             {this.props.doctorPrincipal.fullname} 
-                                        <br/> {this.props.doctorPrincipal.title}</p>
-                                        {/* <img className="img-fluid" src="/images/signature.png" width={200} height={34} alt="signature-image" /> */}
+                                        <br/> 
+                                        <span className="lime-color">
+                                            {this.props.doctorPrincipal.title}
+                                        </span>
+                                            </p>
+                                        <a className="btn btn-blue" href={this.props.callToAction.url}>{this.props.callToAction.text}</a>
                                     </div>
                                 }
                             </div>

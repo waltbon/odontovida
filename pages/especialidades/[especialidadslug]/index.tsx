@@ -4,6 +4,8 @@ import { MainInfoContext } from '../../../contexts/MainInfoContext';
 import Breadcrumbs from '../../../components/breadcrumbs/Breadcrumbs';
 import { IDepartment } from '../../../utils/interfaces/pages/department.interface';
 import { fetchDepartments } from '../../../lib/sanity/queries';
+import BlockContent from '../../../components/ui/BlockContent';
+import DepartmentSidebar from '../../../components/departments/DepartmentSidebar';
 
 interface Props {
     department: IDepartment;
@@ -24,10 +26,22 @@ const IndexPage: NextPage<Props> = ({ department }) => {
                             <Breadcrumbs title={department.title} list={breadcrumbsList} />
                             <div id="service-page" className="wide-60 service-page-section division">
                                 <div className="container">
-                                    <div className="s1-page content-block text-center">
-                                        <h3 className="h3-xl blue-color">{department.title}</h3>
-                                        {/* <h4 className="h4-md blue-color">Maecenas gravida porttitor nunc, magna luctus tempor viverra</h4> */}
-                                        <p className="p-lg">{department.description}</p>
+                                    <div className="row">
+
+                                        <div className="col-lg-8">
+                                            <div className="s1-page content-block text-left">
+                                                <h3 className="h3-xl blue-color">{department.title}</h3>
+                                                <p className="p-lg">{department.description}</p>
+                                                <BlockContent blocks={department.body} />
+                                            </div>
+                                        </div>
+
+                                        <div id="sidebar" className="col-lg-4">
+                                            <DepartmentSidebar
+                                                currentDptId={department._id}
+                                                department={department}
+                                                departments={value.departments} />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

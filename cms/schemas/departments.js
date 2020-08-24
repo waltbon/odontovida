@@ -21,6 +21,11 @@ export default {
       name: 'description',
       title: 'Descripción',
       type: 'text',
+    },
+    {
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent'
     }
   ]
 }

@@ -7,6 +7,7 @@ export interface IHomePage {
         title: string;
         subtitle: string;
         paragraph: string;
+        mainImage: any;
     }
     welcomeSection: {
         title: string;

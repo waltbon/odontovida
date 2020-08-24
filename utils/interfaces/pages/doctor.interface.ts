@@ -7,6 +7,7 @@ export interface IDoctor {
     fullname: string;
     description: string;
     pictureUrl: string;
+    personalImage?: any;
     department: IDepartment;
     titles: ITitle[]
 }

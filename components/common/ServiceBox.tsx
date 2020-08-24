@@ -17,6 +17,7 @@ export default class extends React.Component<{
             <h5 className="h5-xs steelblue-color">{this.props.title}</h5>
             {/* Text */}
             <p>{this.props.description}
+            <button className="btn btn-blue" style={{marginTop: '10px'}}>Conoza más y agende</button>
         </p>
         </div>
 

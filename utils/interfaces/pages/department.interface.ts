@@ -3,4 +3,5 @@ export interface IDepartment {
     slug: string;
     title: string;
     description: string;
+    body: any;
 }

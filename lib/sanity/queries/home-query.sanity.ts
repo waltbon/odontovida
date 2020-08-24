@@ -9,6 +9,7 @@ interface IHomePageSanity {
         title: string;
         subtitle: string;
         paragraph: string;
+        mainImage: any;
     }
     welcomeSection: {
         title: string;

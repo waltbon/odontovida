@@ -1,6 +1,7 @@
 import React from 'react';
 import { IService } from '../../utils/interfaces/pages/service.interface';
 import { urlFor } from '../../lib/sanity/imageBuilder';
+import { generateServiceUrl } from '../../utils/common/urls';
 
 export default class extends React.Component<{
     tabId: string;
@@ -67,7 +68,7 @@ export default class extends React.Component<{
                             </div>
                         </div>	{/* End Options List */}
                         {/* Button */}
-                        <a href={`/servicios/${svc.slug}`} className="btn btn-blue blue-hover mt-30">Ver más información y agendar</a>
+                        <a href={generateServiceUrl(this.props.service)} className="btn btn-blue blue-hover mt-30">Conozca más y agende</a>
                     </div>
                 </div>	{/* END TAB-1 TEXT */}
             </div>

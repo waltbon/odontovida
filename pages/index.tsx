@@ -15,7 +15,8 @@ import AboutSectionItem from '../components/home/AboutSectionItem';
 import Layout from '../components/common/Layout';
 import CarouselContainer from '../components/service/CarouselContainer';
 import TestimonialReview from '../components/home/TestimonialReview';
-import { generateDepartmentUrl } from '../utils/common/urls';
+import { generateDepartmentUrl, generateDoctorUrl } from '../utils/common/urls';
+import { urlFor } from '../lib/sanity/imageBuilder';
 
 interface Props {
     homePage: IHomePage;
@@ -30,7 +31,9 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
                         <Meta seo={page.seo} />
 
                         <SlidesContainer>
-                            <HeroSlider subtitle={page.mainHeader.subtitle} title={page.mainHeader.title} paragraph={page.mainHeader.paragraph} />
+                            <HeroSlider sliderId="hero-1" 
+                                mainImageUrl={urlFor(page.mainHeader.mainImage).url()}
+                                subtitle={page.mainHeader.subtitle} title={page.mainHeader.title} paragraph={page.mainHeader.paragraph} />
                         </SlidesContainer>
 
                         <AboutSection>
@@ -41,7 +44,7 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
                                     if (ix < 2) {
                                         callToAction = {
                                             text: ix === 0 ? 'Ver especialidades' : 'Ver tratamientos',
-                                            url: ix === 0 ? '/especialidades' : '/servicios'
+                                            url: ix === 0 ? '/especialidades' : '/#services-7'
                                         };
                                     }
                                     return (<AboutSectionItem key={ix} title={item.title}
@@ -58,7 +61,8 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
 
                         {/* // <GeneralInfoSection /> */}
 
-                        <WelcomeSection doctorPrincipal={value.principalDoctor} title={page.welcomeSection.title} subtitle={page.welcomeSection.subtitle} description={page.welcomeSection.description} />
+                        <WelcomeSection callToAction={{text:`Conozca más sobre ${value.principalDoctor.fullname}`, url: generateDoctorUrl(value.principalDoctor)}}
+                            doctorPrincipal={value.principalDoctor} title={page.welcomeSection.title} subtitle={page.welcomeSection.subtitle} description={page.welcomeSection.description} />
 
                         <section id="doctors-1" className="wide-100 mt-60 bg-lightgrey doctors-section division">
                             <div className="container">
@@ -107,10 +111,6 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
                             <div className="info-6-img text-center"></div>
 
                         </section>
-
-
-
-
 
                         <section id="services-7" className="wide-100 mt-40 servicess-section division">
                             <div className="container">

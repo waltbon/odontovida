@@ -1,8 +1,8 @@
 import React from 'react';
 import { IDoctor } from '../../utils/interfaces/pages/doctor.interface';
-import BlockContent from '../ui/BlockContent';
 import ServiceFormCard from './ServiceFormCard';
 import { IService } from '../../utils/interfaces/pages/service.interface';
+import { urlFor } from '../../lib/sanity/imageBuilder';
 
 interface Props {
     doctor: IDoctor;
@@ -22,7 +22,7 @@ export default class extends React.Component<Props> {
                     <div className="txt-widget-unit mb-15 clearfix d-flex align-items-center">
                         {/* Avatar */}
                         <div className="txt-widget-avatar">
-                            {/* <img src="https://pbs.twimg.com/profile_images/703321160889585664/v3XbO7MU_400x400.jpg" alt="testimonial-avatar" /> */}
+                            <img src={urlFor(this.props.doctor.personalImage).fit('crop').crop('top').url()} alt="testimonial-avatar" />
                         </div>
 
                         <div className="txt-widget-data">
@@ -47,7 +47,7 @@ export default class extends React.Component<Props> {
                 tempus feugiat dolor lacinia cursus nulla vitae massa
                     </p>
 
-                <ServiceFormCard currentServiceId={this.props.currentServiceId} services={this.props.services} />
+                <ServiceFormCard serviceType="service" currentServiceId={this.props.currentServiceId} services={this.props.services} />
 
                 <h5 className="h5-xs">Need a personal health plan?</h5>
                 {/* Text */}
