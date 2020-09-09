@@ -17,6 +17,8 @@ import CarouselContainer from '../components/service/CarouselContainer';
 import TestimonialReview from '../components/home/TestimonialReview';
 import { generateDepartmentUrl, generateDoctorUrl } from '../utils/common/urls';
 import { urlFor } from '../lib/sanity/imageBuilder';
+import VideoSection from '../components/common/VideoSection';
+import KPIsInfo from '../components/info/KPIsInfo';
 
 interface Props {
     homePage: IHomePage;
@@ -31,7 +33,7 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
                         <Meta seo={page.seo} />
 
                         <SlidesContainer>
-                            <HeroSlider sliderId="hero-1" 
+                            <HeroSlider sliderId="hero-1"
                                 mainImageUrl={urlFor(page.mainHeader.mainImage).url()}
                                 subtitle={page.mainHeader.subtitle} title={page.mainHeader.title} paragraph={page.mainHeader.paragraph} />
                         </SlidesContainer>
@@ -43,8 +45,8 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
 
                                     if (ix < 2) {
                                         callToAction = {
-                                            text: ix === 0 ? 'Ver especialidades' : 'Ver tratamientos',
-                                            url: ix === 0 ? '/especialidades' : '/#services-7'
+                                            text: ix === 0 ? 'Ver tratamientos' : 'Ver especialidades',
+                                            url: ix === 0 ? '/#doctors-1' : '/#services-7'
                                         };
                                     }
                                     return (<AboutSectionItem key={ix} title={item.title}
@@ -61,13 +63,13 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
 
                         {/* // <GeneralInfoSection /> */}
 
-                        <WelcomeSection callToAction={{text:`Conozca más sobre ${value.principalDoctor.fullname}`, url: generateDoctorUrl(value.principalDoctor)}}
+                        <WelcomeSection callToAction={{ text: `Conozca más sobre ${value.principalDoctor.fullname}`, url: generateDoctorUrl(value.principalDoctor) }}
                             doctorPrincipal={value.principalDoctor} title={page.welcomeSection.title} subtitle={page.welcomeSection.subtitle} description={page.welcomeSection.description} />
 
                         <section id="doctors-1" className="wide-100 mt-60 bg-lightgrey doctors-section division">
                             <div className="container">
                                 <SectionTitle title="Tratamientos que ofrecemos"
-                                    description="Odontología general... Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus, blandit posuere ligula varius congue cursus porta feugiat" />
+                                    description="Conozca algunos de los tratamientos que ofrecemos y siéntase libre de consultarnos en cualquier momento" />
                                 <ServiceTabsContainer />
                             </div>
                         </section>
@@ -78,35 +80,18 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
                                     <div className="col-lg-6 offset-lg-6">
                                         <div className="txt-block pc-30 white-color wow fadeInUp" data-wow-delay="0.4s">
                                             {/* Section ID */}
-                                            <span className="section-id id-color">Qualified Doctors</span>
+                                            <span className="section-id id-color">{page.doctrosIntroSection.subtitle}</span>
                                             {/* Title */}
-                                            <h3 className="h3-md">Group of Certified and Experienced Doctors</h3>
+                                            <h3 className="h3-md">{page.doctrosIntroSection.title}</h3>
                                             {/* CONTENT BOX #1 */}
                                             <div className="box-list">
-                                                <div className="box-list-icon"><i className="fas fa-genderless" /></div>
-                                                <p>Maecenas gravida porttitor nunc, quis vehicula magna luctus tempor. Quisque vel laoreet
-                                                turpis urna augue, viverra a augue eget, dictum tempor diam pulvinar massa purus nulla
-          </p>
-                                            </div>
-                                            {/* CONTENT BOX #2 */}
-                                            <div className="box-list">
-                                                <div className="box-list-icon"><i className="fas fa-genderless" /></div>
-                                                <p>Nemo ipsam egestas volute turpis dolores ut aliquam quaerat sodales sapien undo pretium
-                                                purus feugiat dolor impedit
-          </p>
-                                            </div>
-                                            {/* CONTENT BOX #3 */}
-                                            <div className="box-list">
-                                                <div className="box-list-icon"><i className="fas fa-genderless" /></div>
-                                                <p>Nemo ipsam egestas volute turpis dolores ut aliquam quaerat sodales sapien undo pretium
-                                                purus feugiat dolor impedit magna purus pretium gravida donec ligula massa in faucibus
-          </p>
+                                                <p>{page.doctrosIntroSection.description}</p>
                                             </div>
                                             {/* Button */}
-                                            <a href="all-doctors.html" className="btn btn-tra-white blue-hover mt-25">Meet The Doctors</a>
+                                            <a href="/especialistas" className="btn btn-tra-white blue-hover mt-25">Conozca a los doctores</a>
                                         </div>
                                     </div>
-                                </div>	  {/* End row */}
+                                </div>
                             </div>
                             <div className="info-6-img text-center"></div>
 
@@ -122,7 +107,7 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
                                         <CarouselContainer>
                                             {
                                                 value.departments.map(dpt =>
-                                                    <ServiceBox url={generateDepartmentUrl(dpt)} key={dpt._id} title={dpt.title} description={dpt.description} />)
+                                                    <ServiceBox icon={dpt.icon} url={generateDepartmentUrl(dpt)} key={dpt._id} title={dpt.title} description={dpt.description} />)
                                             }
                                         </CarouselContainer>
                                     </div>
@@ -131,20 +116,37 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
                             </div>
                         </section>
 
+                        <KPIsInfo></KPIsInfo>
+
 
                         <section id="reviews-2" className="bg-lightgrey wide-100 reviews-section division">
                             <div className="container">
                                 <SectionTitle title="¿Qué dicen nuestros clientes?" description="Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
                         blandit posuere ligula varius congue cursus porta feugiat" />
+                                {/* <div className="row">
+                                    <div className="mx-auto pb-100">
+                                        <VideoPlayer url="/video/testimonial-12.mp4" />
+                                    </div>
+                                </div> */}
 
+                                {/* <h4 className="text-center pb-40">Algunos testimonios de nuestros clientes</h4> */}
                                 <CarouselContainer>
                                     {
                                         Array.isArray(page.testimonials) &&
                                         page.testimonials.map(testimonial => <TestimonialReview text={testimonial.text} name={testimonial.name} />)
                                     }
                                 </CarouselContainer>
+
+
                             </div>
                         </section>
+
+                        <VideoSection descriptions={[
+                                "Nuestros pacientes son importantes y una de nuestras prioridades es saber cómo ha sido su experiencia.",
+                                "Somos una familia y así es como deseamos que todos se sientan cuando son atendidos, que se sientan en casa.",
+                                "Aquí encontraras algunas opiniones de nuestros pacientes."]}
+                            videoUrl={"/video/testimonial-12.mp4"} title="Testimonial" subtitle={"¿Qué dicen nuestros clientes?"}>
+                        </VideoSection>
                     </>)
                 }
             </MainInfoContext.Consumer>

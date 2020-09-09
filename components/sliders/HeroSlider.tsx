@@ -26,10 +26,10 @@ export default class extends React.Component<Props> {
                     <div className="col-md-8 col-lg-7 col-xl-6">
                         <div className="hero-txt mb-40">
                             {/* Title */}
-                            <h5 className="lightgrey-color">{this.props.subtitle}</h5>
-                            <h2 className="lightgrey-color">{this.props.title}</h2>
+                            <h5 className="white-color">{this.props.subtitle}</h5>
+                            <h2 className="white-color">{this.props.title}</h2>
                             {/* Text */}
-                            <p className="wihte-color p-lg">{this.props.paragraph}
+                            <p className="white-color p-lg">{this.props.paragraph}
                             </p>
                             {/* Button */}
                             {/* <a href="about-us.html" className="btn btn-blue blue-hover">More About Clinic</a> */}

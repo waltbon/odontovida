@@ -19,6 +19,7 @@ interface State {
         email: string;
         phone: string;
         recurrentCustomer: string;
+        serviceId: string;
         comments?: string;
     }
 }
@@ -28,7 +29,9 @@ export default class extends React.Component<Props, State> {
         super(props);
         this.onHandleSubmit = this.onHandleSubmit.bind(this);
         this.state = {
-            data: {} as any
+            data: {
+                serviceId: this.props.currentServiceId
+            } as any
         };
     }
 
@@ -39,7 +42,9 @@ export default class extends React.Component<Props, State> {
     onHandleChange(e) {
         e.preventDefault();
         const { name, value } = e.target;
-
+        const { data } = this.state;
+        data[name] = value;
+        this.setState({data});
     }
 
     render() {
@@ -72,13 +77,16 @@ export default class extends React.Component<Props, State> {
                     </div>
 
                     <div id="input-service" className="col-md-12 col-lg-12 input-patient">
-                        <select id="inlineFormCustomSelect3" name="patient" className="custom-select patient" required>
+                        <select id="inlineFormCustomSelect3" name="patient" className="custom-select patient"  value={this.state.data.serviceId} required>
                             <option value="">Seleccione un servicio*</option>
                             {
                                 Array.isArray(this.props.services) && svcItems.map(service =>
                                     <option key={service.key} value={service.key}>{service.name}</option>)
                             }
                         </select>
+                    </div>
+                    <div id="input-message" className="col-md-12 col-lg-12">
+                        <textarea value={this.state.data.comments} onChange={this.onHandleChange} name="comments" className="form-control" placeholder="Déjenos sus comentarios o consultas"></textarea>
                     </div>
                     <div className="col-md-12 col-lg-12 input-patient">
                         <button type="submit" className="btn btn-blue blue-hover mt-10">Enviar información</button>

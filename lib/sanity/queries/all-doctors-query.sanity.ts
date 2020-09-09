@@ -9,6 +9,7 @@ export default async (): Promise<IDoctor[]> => {
         'slug': slug.current,
         title,
         fullname,
+        personalImage,
         description,
         _id
     }`);

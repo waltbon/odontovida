@@ -14,6 +14,11 @@ export interface IHomePage {
         subtitle: string;
         description: string;
     },
+    doctrosIntroSection: {
+        title: string;
+        subtitle: string;
+        description: string;
+    },
     aboutSection: [{
         title: string;
         subtitle: string;

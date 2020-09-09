@@ -11,6 +11,7 @@ export default async (slug: string): Promise<IDoctor> => {
         fullname,
         description,
         department->{_id,slug,title},
+        personalImage,
         "pictureUrl": personalImage.asset->url,
         titles,
         _id
@@ -24,6 +25,7 @@ export default async (slug: string): Promise<IDoctor> => {
         _id: data._id,
         fullname: data.fullname,
         pictureUrl: data.pictureUrl,
+        personalImage: data.personalImage,
         slug: data.slug,
         department: data.department,
         titles: data.titles

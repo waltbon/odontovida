@@ -12,7 +12,7 @@ export default class extends React.Component<Props> {
 
                 <div className="quote"><img src="images/quote.png" alt="quote-img" /></div>
                 <div className="testimonial-avatar">
-                    {/* <img src="images/review-author-1.jpg" alt="testimonial-avatar" /> */}
+                    <img src="images/review-author-1.jpg" alt="testimonial-avatar" />
                 </div>
 
                 <p>{this.props.text}</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { IDoctor } from '../../utils/interfaces/pages/doctor.interface';
+import { urlFor } from '../../lib/sanity/imageBuilder';
 
 export default class extends React.Component<{
     title: string;
@@ -19,7 +20,7 @@ export default class extends React.Component<{
                         {/* IMAGE BLOCK */}
                         <div className="col-lg-6">
                             <div className="about-img text-center wow fadeInUp" data-wow-delay="0.6s">
-                                <img className="img-fluid" src="/images/temp/stephanie-2.jpg" alt="about-image" />
+                                <img className="img-fluid" src={urlFor(this.props.doctorPrincipal.personalImage).url()} alt="about-image" />
                             </div>
                         </div>
                         {/* TEXT BLOCK */}

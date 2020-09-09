@@ -6,6 +6,7 @@ import { IDepartment } from '../../../utils/interfaces/pages/department.interfac
 import { fetchDepartments } from '../../../lib/sanity/queries';
 import BlockContent from '../../../components/ui/BlockContent';
 import DepartmentSidebar from '../../../components/departments/DepartmentSidebar';
+import { generateDepartmentUrl } from '../../../utils/common/urls';
 
 interface Props {
     department: IDepartment;
@@ -13,8 +14,12 @@ interface Props {
 
 const IndexPage: NextPage<Props> = ({ department }) => {
     const breadcrumbsList = [{
-        text: '',
-        url: ''
+        text: 'Inicio',
+        url: '/',
+
+    }, {
+        text: department.title,
+        url: generateDepartmentUrl(department)
     }];
 
     return (
@@ -23,7 +28,7 @@ const IndexPage: NextPage<Props> = ({ department }) => {
                 {
                     (value) => (
                         <>
-                            <Breadcrumbs title={department.title} list={breadcrumbsList} />
+                            <Breadcrumbs title={`¿Qué necesito saber sobre ${department.title}?`} list={breadcrumbsList} />
                             <div id="service-page" className="wide-60 service-page-section division">
                                 <div className="container">
                                     <div className="row">

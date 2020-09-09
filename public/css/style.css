@@ -2714,14 +2714,14 @@ td.text-right {
 }
 
 .info-6-img { 
-  background-image: url(../images/temp/stephanie-1.jpg);
+  background-image: url(../images/temp/21.jpg);
   background-repeat: no-repeat;
   background-position: center center;   
   background-size: cover;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 48%;
+  width: 50%;
   left: 0;
 }
 
@@ -3106,7 +3106,7 @@ td.text-right {
   =========================================================================== */
 
 #statistic-1 {
-  background-image: url(../images/statistic.jpg);
+  background-image: url(../images/temp/24.jpg);
   padding-top: 80px;
   padding-bottom: 40px;
 }

@@ -92,6 +92,30 @@ export default {
         type: 'text'
       }]
     }, {
+      title: 'Conozca a los odontólogos',
+      name: 'doctrosIntroSection',
+      type: 'object',
+      collapsible: true,
+      collapsed: true,
+      required: true,
+      fields: [{
+        name: 'title',
+        title: 'Título',
+        type: 'string'
+      }, {
+        name: 'subtitle',
+        title: 'Subtítulo',
+        type: 'string'
+      }, {
+        name: 'description',
+        title: 'Descripción',
+        type: 'text',
+      }, {
+        name: 'image',
+        title: 'Imagen',
+        type: 'image'
+      }]
+    }, {
       title: 'Testimoniales',
       name: 'testimonials',
       type: 'array',

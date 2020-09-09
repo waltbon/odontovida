@@ -17,7 +17,7 @@ export default class extends React.Component {
                         <header id="header-2" className="header ">
                             <div className="wsmobileheader clearfix">
                                 <a id="wsnavtoggle" className="wsanimated-arrow"><span /></a>
-                                <span className="smllogo"><img src="/images/logo.jpg" width={130} height={40} alt="mobile-logo" /></span>
+                                <span className="smllogo"><img src="/images/logo.jpg" width={140} height={40} alt="mobile-logo" /></span>
                                 <a href="tel:123456789" className="callusbtn"><i className="fas fa-phone" /></a>
                             </div>
 
@@ -102,14 +102,15 @@ export default class extends React.Component {
                                             <ServicesMenu services={value.services} />
                                             <DepartmentsMenu doctors={value.doctors} departments={value.departments} />
 
-                                            <li className="nl-simple" aria-haspopup="true"><a href="#">Contáctenos</a></li>
+                                            <li className="nl-simple" aria-haspopup="true"><a href="/especialistas">Doctores</a></li>
+                                            <li className="nl-simple" aria-haspopup="true"><a href="/contacto">Contáctenos</a></li>
                                             {/* HIDDEN NAVIGATION MENU BUTTON */}
-                                            <li className="nl-simple header-btn" aria-haspopup="true"><a className="blue-hover" href="timetable.html">Agende una cita</a></li>
+                                            <li className="nl-simple header-btn" aria-haspopup="true"><a className="blue-hover" href="/contacto">¿Desea que lo contactemos?</a></li>
                                         </ul>
                                     </nav>	{/* END MAIN MENU */}
                                     {/* NAVIGATION MENU BUTTON */}
                                     <div className="header-button">
-                                        <span className="nl-simple header-btn"><a href="timetable.html">Agende una cita</a></span>
+                                        <span className="nl-simple header-btn"><a href="/contacto">¿Desea que lo contactemos?</a></span>
                                     </div>
                                 </div>
                             </div>	{/* END NAVIGATION MENU */}

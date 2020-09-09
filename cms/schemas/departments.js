@@ -23,6 +23,11 @@ export default {
       type: 'text',
     },
     {
+      name: 'icon',
+      title: 'Icono (css)',
+      type: 'string'
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent'

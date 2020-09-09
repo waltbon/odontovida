@@ -51,7 +51,7 @@ export default class extends React.Component<{
                             </div>
                             {/* Buttons */}
                             <div className="doctor-photo-btn text-center">
-                                <a href="/" className="btn btn-md btn-blue blue-hover">Agende una cita</a>
+                                <a href="/contacto" className="btn btn-md btn-blue blue-hover">¿Desea que lo contactemos?</a>
                             </div>
                         </div>
                     </div>	{/* END DOCTOR PHOTO */}

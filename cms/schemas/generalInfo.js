@@ -11,9 +11,17 @@ export default {
         title: 'Dirección Corta',
         type: 'string'
       }, {
+        name: 'largeAddress',
+        title: 'Dirección larga',
+        type: 'text'
+      }, {
         name: 'shortSchedule',
         title: 'Horarios corto',
         type: 'string'
+      }, {
+        name: 'largeSchedule',
+        title: 'Horarios descripción larga',
+        type: 'text'
       }, {
         name: 'mainPhone',
         title: 'Teléfono principal',

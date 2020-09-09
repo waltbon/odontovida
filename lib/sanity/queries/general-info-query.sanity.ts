@@ -8,7 +8,9 @@ export default async (): Promise<IGeneralInfo> => {
     const data = await fetchQuerySanity<IGeneralInfoSanity>(`*[_type == "generalInfo"][0]{
         contactEmail,
         shortSchedule,
+        largeSchedule,
         shortAddress,
+        largeAddress,
         mainPhone,
         socialMedia
     }`);

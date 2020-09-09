@@ -57,7 +57,7 @@ export const MainInfoContextProvider = ({value, children}) => {
         if (!doctors) {
             return;
         }
-        const principal = doctors.find(dr=> dr.fullname.toLowerCase().includes('step'));
+        const principal = doctors.find(dr=> dr.fullname?.toLowerCase().includes('step'));
         if (principal) {
             setPrincipalDoctor(principal);
         }

@@ -4,8 +4,9 @@ import { IDepartment } from '../../../utils/interfaces/pages/department.interfac
 interface IDepartmentSanity {
     _id: string;
     title: string;
-    description: string;
     slug: any;
+    description: string;
+    icon: string;
     body: any;
 }
 
@@ -13,6 +14,7 @@ export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
     const data = await fetchQuerySanity<IDepartmentSanity[]>(`*[_type == "departments"]{
         title,
         description,
+        icon,
         'slug': slug.current,
         _id
     }`);
@@ -26,7 +28,8 @@ export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
             slug: service.slug,
             description: service.description,
             _id: service._id,
-            body: service.body
+            body: service.body,
+            icon: service.icon
         }
     });
 }
@@ -35,6 +38,7 @@ export const fetchSingleDepartment = async (slug: string): Promise<IDepartment> 
     const data = await fetchQuerySanity<IDepartmentSanity>(`*[_type == "departments" && slug.current == "${slug}"][0]{
         title,
         description,
+        icon,
         'slug': slug.current,
         body,
         _id
@@ -48,6 +52,7 @@ export const fetchSingleDepartment = async (slug: string): Promise<IDepartment> 
         slug: data.slug,
         description: data.description,
         body: data.body,
+        icon: data.icon,
         _id: data._id
     }
 }
