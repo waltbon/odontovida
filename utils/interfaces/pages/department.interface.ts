@@ -3,6 +3,7 @@ export interface IDepartment {
     slug: string;
     title: string;
     icon?: string;
-    description: string;
+    mainImage:any;
+    shortDescription: string;
     body: any;
 }

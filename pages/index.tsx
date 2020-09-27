@@ -1,7 +1,7 @@
 import React from 'react'
 import { NextPage } from 'next';
 import HeroSlider from '../components/sliders/HeroSlider';
-import { fetchHomePage } from '../lib/sanity/queries';
+import { fetchHomePage, fetchServices } from '../lib/sanity/queries';
 import { IHomePage } from '../utils/interfaces/pages/home-page.interface';
 import WelcomeSection from '../components/home/WelcomeSection';
 import Meta from '../components/common/Meta';
@@ -19,12 +19,17 @@ import { generateDepartmentUrl, generateDoctorUrl } from '../utils/common/urls';
 import { urlFor } from '../lib/sanity/imageBuilder';
 import VideoSection from '../components/common/VideoSection';
 import KPIsInfo from '../components/info/KPIsInfo';
+import { IService } from '../utils/interfaces/pages/service.interface';
+import { fetchAllDepartments } from '../lib/sanity/queries/departments-query.sanity';
+import { IDepartment } from '../utils/interfaces/pages/department.interface';
 
 interface Props {
     homePage: IHomePage;
+    allServices: IService[],
+    allDepartments: IDepartment[]
 }
 
-const IndexPage: NextPage<Props> = ({ homePage: page }) => {
+const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartments }) => {
     return (
         <Layout>
             <MainInfoContext.Consumer>
@@ -63,14 +68,19 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
 
                         {/* // <GeneralInfoSection /> */}
 
-                        <WelcomeSection callToAction={{ text: `Conozca más sobre ${value.principalDoctor.fullname}`, url: generateDoctorUrl(value.principalDoctor) }}
-                            doctorPrincipal={value.principalDoctor} title={page.welcomeSection.title} subtitle={page.welcomeSection.subtitle} description={page.welcomeSection.description} />
+                        <WelcomeSection callToAction={{ text: `Conozca más sobre ${value.principalDoctor.fullname}`, 
+                            url: generateDoctorUrl(value.principalDoctor) }}
+                            doctorPrincipal={value.principalDoctor} 
+                            title={page.welcomeSection.title} 
+                            image={page.welcomeSection.welcomeImage}
+                            subtitle={page.welcomeSection.subtitle} 
+                            description={page.welcomeSection.description} />
 
                         <section id="doctors-1" className="wide-100 mt-60 bg-lightgrey doctors-section division">
                             <div className="container">
                                 <SectionTitle title="Tratamientos que ofrecemos"
                                     description="Conozca algunos de los tratamientos que ofrecemos y siéntase libre de consultarnos en cualquier momento" />
-                                <ServiceTabsContainer />
+                                <ServiceTabsContainer services={allServices}/>
                             </div>
                         </section>
 
@@ -106,8 +116,13 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
                                     <div className="col-md-12">
                                         <CarouselContainer>
                                             {
-                                                value.departments.map(dpt =>
-                                                    <ServiceBox icon={dpt.icon} url={generateDepartmentUrl(dpt)} key={dpt._id} title={dpt.title} description={dpt.description} />)
+                                                allDepartments.map(dpt =>
+                                                    <ServiceBox mainImage={dpt.mainImage} 
+                                                        icon={dpt.icon} 
+                                                        url={generateDepartmentUrl(dpt)} 
+                                                        key={dpt._id} 
+                                                        title={dpt.title} 
+                                                        description={dpt.shortDescription} />)
                                             }
                                         </CarouselContainer>
                                     </div>
@@ -121,19 +136,11 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
 
                         <section id="reviews-2" className="bg-lightgrey wide-100 reviews-section division">
                             <div className="container">
-                                <SectionTitle title="¿Qué dicen nuestros clientes?" description="Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
-                        blandit posuere ligula varius congue cursus porta feugiat" />
-                                {/* <div className="row">
-                                    <div className="mx-auto pb-100">
-                                        <VideoPlayer url="/video/testimonial-12.mp4" />
-                                    </div>
-                                </div> */}
-
-                                {/* <h4 className="text-center pb-40">Algunos testimonios de nuestros clientes</h4> */}
+                                <SectionTitle title="Testimoniales" description="Conozca qué dicen nuestros clientes sobre nuestro servicio" />
                                 <CarouselContainer>
                                     {
                                         Array.isArray(page.testimonials) &&
-                                        page.testimonials.map(testimonial => <TestimonialReview text={testimonial.text} name={testimonial.name} />)
+                                        page.testimonials.map((testimonial, ix) => <TestimonialReview key={ix} text={testimonial.text} name={testimonial.name} />)
                                     }
                                 </CarouselContainer>
 
@@ -155,8 +162,13 @@ const IndexPage: NextPage<Props> = ({ homePage: page }) => {
 }
 
 IndexPage.getInitialProps = async ({ req, res }): Promise<any> => {
+    const prom = await Promise.all([ 
+        fetchHomePage(), fetchServices.fetchAllServicesDetails(), fetchAllDepartments()
+    ]);
     return {
-        homePage: await fetchHomePage()
+        homePage: prom[0],
+        allServices: prom[1],
+        allDepartments: prom[2]
     }
 }
 

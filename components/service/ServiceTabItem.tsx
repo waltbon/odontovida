@@ -18,7 +18,7 @@ export default class extends React.Component<{
                 {/* TAB-1 IMAGE */}
                 <div className="col-lg-6">
                     <div className="tab-img">
-                        <img className="img-fluid" src={this.props.service.mainImageUrl} alt="tab-image" />
+                        <img className="img-fluid" src={urlFor(this.props.service.mainImage).url()} alt="tab-image" />
                     </div>
                 </div>
                 {/* TAB-1 TEXT */}

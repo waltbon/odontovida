@@ -1,12 +1,12 @@
 import React from 'react'
 import { NextPage } from 'next';
-import { DoctorsApi } from '../../../../lib/api';
-import DoctorBreadcrumb from '../../../../components/doctors/DoctorBreadcrumb';
-import { IDoctor } from '../../../../utils/interfaces/pages/doctor.interface';
-import DoctorDetailSection from '../../../../components/doctors/DoctorDetailSection';
-import Meta from '../../../../components/common/Meta';
-import { MainInfoContext } from '../../../../contexts/MainInfoContext';
-import Layout from '../../../../components/common/Layout';
+import { DoctorsApi } from '../../lib/api';
+import DoctorBreadcrumb from '../../components/doctors/DoctorBreadcrumb';
+import { IDoctor } from '../../utils/interfaces/pages/doctor.interface';
+import DoctorDetailSection from '../../components/doctors/DoctorDetailSection';
+import Meta from '../../components/common/Meta';
+import { MainInfoContext } from '../../contexts/MainInfoContext';
+import Layout from '../../components/common/Layout';
 
 
 interface Props {
@@ -25,7 +25,7 @@ const IndexPage: NextPage<Props> = ({ doctor }) => {
                     </>)
                 }
             </MainInfoContext.Consumer>
-        </Layout>
+    </Layout>
     );
 }
 

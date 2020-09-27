@@ -50,9 +50,22 @@ export const fetchAllServicesDetails = async (): Promise<IService[]> => {
     const data = await fetchQuerySanity<IServicesSanity[]>(`*[_type == "services"]{
         title,
         shortDescription,
-        'slug': slug.current,
         mainImage,
+        'slug': slug.current,
         doctor->,
+        _id
+    }`);
+    if (!data || !Array.isArray(data)) {
+        return [];
+    }
+
+    return data.map(service => mapServiceFromSanity(service));
+}
+
+export const fetchAllServicesDetailsSimple = async (): Promise<IService[]> => {
+    const data = await fetchQuerySanity<IServicesSanity[]>(`*[_type == "services"]{
+        title,
+        'slug': slug.current,
         _id
     }`);
     if (!data || !Array.isArray(data)) {

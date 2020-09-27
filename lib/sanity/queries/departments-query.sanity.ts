@@ -5,15 +5,41 @@ interface IDepartmentSanity {
     _id: string;
     title: string;
     slug: any;
-    description: string;
+    shortDescription: string;
     icon: string;
     body: any;
+    mainImage:any;
 }
 
 export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
     const data = await fetchQuerySanity<IDepartmentSanity[]>(`*[_type == "departments"]{
         title,
-        description,
+        shortDescription,
+        icon,
+        mainImage,
+        'slug': slug.current,
+        _id
+    }`);
+    if (!data || !Array.isArray(data)) {
+        return [];
+    }
+
+    return data.map(service => {
+        return {
+            title: service.title,
+            slug: service.slug,
+            shortDescription: service.shortDescription,
+            _id: service._id,
+            mainImage: service.mainImage,
+            body: service.body,
+            icon: service.icon
+        }
+    });
+}
+
+export const fetchAllDepartmentsSimple = async (): Promise<IDepartment[]> => {
+    const data = await fetchQuerySanity<IDepartmentSanity[]>(`*[_type == "departments"]{
+        title,
         icon,
         'slug': slug.current,
         _id
@@ -26,8 +52,9 @@ export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
         return {
             title: service.title,
             slug: service.slug,
-            description: service.description,
+            shortDescription: service.shortDescription,
             _id: service._id,
+            mainImage: service.mainImage,
             body: service.body,
             icon: service.icon
         }
@@ -37,8 +64,9 @@ export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
 export const fetchSingleDepartment = async (slug: string): Promise<IDepartment> => {
     const data = await fetchQuerySanity<IDepartmentSanity>(`*[_type == "departments" && slug.current == "${slug}"][0]{
         title,
-        description,
+        shortDescription,
         icon,
+        mainImage,
         'slug': slug.current,
         body,
         _id
@@ -50,7 +78,8 @@ export const fetchSingleDepartment = async (slug: string): Promise<IDepartment> 
     return {
         title: data.title,
         slug: data.slug,
-        description: data.description,
+        shortDescription: data.shortDescription,
+        mainImage: data.mainImage,
         body: data.body,
         icon: data.icon,
         _id: data._id

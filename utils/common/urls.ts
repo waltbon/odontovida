@@ -20,5 +20,5 @@ export const generateDoctorUrl = (dr: IDoctor) => {
     if (!dr) {
         return null;
     }
-    return `/especialidades/${dr.department ? dr.department.slug : 'general'}/especialistas/${dr.slug}`;
+    return `/especialistas/${dr.slug}`;
 }

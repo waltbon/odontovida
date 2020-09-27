@@ -22,8 +22,8 @@ export default class extends React.Component<Props> {
                             <h3 className="h3-md steelblue-color">{this.props.title}</h3>
 
                             {
-                                Array.isArray(this.props.descriptions) && this.props.descriptions.map(paragraph =>
-                                    (<div className="box-list">
+                                Array.isArray(this.props.descriptions) && this.props.descriptions.map((paragraph, ix) =>
+                                    (<div key={ix} className="box-list">
                                         <div className="box-list-icon"><i className="fas fa-genderless" /></div>
                                         <p>{paragraph}</p>
                                     </div>)

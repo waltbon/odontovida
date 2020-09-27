@@ -12,6 +12,7 @@ export default async (slug: string): Promise<IDoctor> => {
         description,
         department->{_id,slug,title},
         personalImage,
+        order,
         "pictureUrl": personalImage.asset->url,
         titles,
         _id
@@ -28,6 +29,7 @@ export default async (slug: string): Promise<IDoctor> => {
         personalImage: data.personalImage,
         slug: data.slug,
         department: data.department,
-        titles: data.titles
+        titles: data.titles,
+        order: data.order,
     };
 }

@@ -3,6 +3,7 @@ import { IDoctor } from '../../utils/interfaces/pages/doctor.interface';
 import ServiceFormCard from './ServiceFormCard';
 import { IService } from '../../utils/interfaces/pages/service.interface';
 import { urlFor } from '../../lib/sanity/imageBuilder';
+import SidebarMeetDoctors from '../sidebar/SidebarMeetDoctors';
 
 interface Props {
     doctor: IDoctor;
@@ -43,25 +44,14 @@ export default class extends React.Component<Props> {
             {/* SIDEBAR TABLE */}
             <div className="sidebar-table sidebar-div mb-50">
                 <h4 className="h4-md">Solicite su cita</h4>
-                <p className="p-sm pb-4">Porta semper lacus cursus, feugiat primis ultrice ligula risus auctor at
-                tempus feugiat dolor lacinia cursus nulla vitae massa
-                    </p>
-
+                <p className="p-sm pb-4">Déjenos sus comentarios y consultas y le ayudaremos muy pronto.</p>
                 <ServiceFormCard serviceType="service" currentServiceId={this.props.currentServiceId} services={this.props.services} />
 
                 <h5 className="h5-xs">Need a personal health plan?</h5>
-                {/* Text */}
                 <p className="p-sm">Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor</p>
-            </div>	{/* END SIDEBAR TABLE */}
-            {/* SIDEBAR TIMETABLE */}
-            <div className="sidebar-timetable sidebar-div mb-50">
-                <h5 className="h5-md mb-20">Doctors Timetable</h5>
-                <p className="p-sm">Porta semper lacus cursus, feugiat primis ultrice ligula risus auctor at
-                tempus feugiat dolor lacinia cursus nulla vitae massa
-          </p>
-                {/* Button */}
-                <a href="about.html" className="btn btn-blue blue-hover mt-10">View Timetable</a>
-            </div>	{/* END SIDEBAR TABLE */}
+            </div>
+            
+            <SidebarMeetDoctors/>
         </>
         )
     }

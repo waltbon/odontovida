@@ -10,6 +10,7 @@ export interface IDoctor {
     personalImage?: any;
     department: IDepartment;
     titles: ITitle[]
+    order: number
 }
 
 export interface ITitle {

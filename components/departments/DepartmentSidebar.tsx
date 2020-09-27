@@ -1,6 +1,7 @@
 import React from 'react';
 import { IDepartment } from '../../utils/interfaces/pages/department.interface';
 import ServiceFormCard from '../service/ServiceFormCard';
+import SidebarMeetDoctors from '../sidebar/SidebarMeetDoctors';
 
 interface Props {
     department: IDepartment;
@@ -20,19 +21,12 @@ export default class extends React.Component<Props> {
 
                 <ServiceFormCard serviceType="department" currentServiceId={this.props.currentDptId} services={this.props.departments} />
 
-                <h5 className="h5-xs">Need a personal health plan?</h5>
+                <h5 className="h5-xs">¿Necesita una consulta?</h5>
                 {/* Text */}
-                <p className="p-sm">Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor</p>
+                <p className="p-sm">Siéntase libre de escribirnos y le responderemos lo más pronto posible
+                </p>
             </div>	{/* END SIDEBAR TABLE */}
-            {/* SIDEBAR TIMETABLE */}
-            <div className="sidebar-timetable sidebar-div mb-50">
-                <h5 className="h5-md mb-20">Doctors Timetable</h5>
-                <p className="p-sm">Porta semper lacus cursus, feugiat primis ultrice ligula risus auctor at
-                tempus feugiat dolor lacinia cursus nulla vitae massa
-          </p>
-                {/* Button */}
-                <a href="about.html" className="btn btn-blue blue-hover mt-10">View Timetable</a>
-            </div>	{/* END SIDEBAR TABLE */}
+            <SidebarMeetDoctors/>
         </>
         )
     }

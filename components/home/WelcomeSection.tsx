@@ -7,6 +7,7 @@ export default class extends React.Component<{
     subtitle: string;
     description: string;
     doctorPrincipal: IDoctor;
+    image: any;
     callToAction: {
         url: string;
         text: string;
@@ -20,7 +21,7 @@ export default class extends React.Component<{
                         {/* IMAGE BLOCK */}
                         <div className="col-lg-6">
                             <div className="about-img text-center wow fadeInUp" data-wow-delay="0.6s">
-                                <img className="img-fluid" src={urlFor(this.props.doctorPrincipal.personalImage).url()} alt="about-image" />
+                                <img className="img-fluid" src={urlFor(this.props.image).url()} alt="about-image" />
                             </div>
                         </div>
                         {/* TEXT BLOCK */}

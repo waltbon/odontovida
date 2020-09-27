@@ -75,6 +75,7 @@ export default class OdontovidaDocument extends Document {
                     <script src="/js/wow.js"></script>
                     <script src="/js/custom.js"></script>
                     <NextScript />
+                    {/* <script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js"></script> */}
                 </body>
             </Html>
         );

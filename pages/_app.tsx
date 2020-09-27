@@ -1,4 +1,5 @@
 import React from 'react';
+import NextCookies from 'next-cookies'
 import App, { AppInitialProps } from 'next/app';
 import { CommonAppProps } from '../utils/interfaces/pages/app';
 import { MainInfoContextProvider } from '../contexts/MainInfoContext';
@@ -28,10 +29,12 @@ OdontovidaApp.getInitialProps = async ({ ctx, Component }): Promise<AppInitialPr
         props = await Component.getInitialProps(ctx) as any;
     }
 
+    let {maininfo} = NextCookies(ctx);
+    const mainInfoData = maininfo ? JSON.parse(maininfo) : await MainInfoApi.getMainInfo();
     return {
         pageProps: {
             ...props,
-            ...await MainInfoApi.getMainInfo()
+            ...mainInfoData
         }
     };
 }

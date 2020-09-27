@@ -90,6 +90,10 @@ export default {
         name: 'description',
         title: 'Descripción',
         type: 'text'
+      }, {
+        name: 'welcomeImage',
+        title: 'Imagen de bienvenida Stephanie',
+        type: 'image'
       }]
     }, {
       title: 'Conozca a los odontólogos',

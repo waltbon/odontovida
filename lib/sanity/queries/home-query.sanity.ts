@@ -15,6 +15,7 @@ interface IHomePageSanity {
         title: string;
         subtitle: string;
         description: string;
+        welcomeImage: any;
     }
     aboutSection: [{
         title: string;
@@ -28,6 +29,6 @@ interface IHomePageSanity {
 }
 
 export default async (): Promise<IHomePage> => {
-    const data = await fetchQuerySanity<IHomePageSanity>(`*[_type == "homePage"][0]`);
+    const data = await fetchQuerySanity<any>(`*[_type == "homePage"][0]`);
     return data;
 }

@@ -13,6 +13,7 @@ export interface IHomePage {
         title: string;
         subtitle: string;
         description: string;
+        welcomeImage: any;
     },
     doctrosIntroSection: {
         title: string;

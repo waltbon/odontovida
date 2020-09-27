@@ -23,6 +23,11 @@ export default {
       type: 'text',
     },
     {
+      name: 'mainImage',
+      title: 'Imagen principal',
+      type: 'image'
+    },
+    {
       name: 'icon',
       title: 'Icono (css)',
       type: 'string'

@@ -23,6 +23,10 @@ export default {
       }
     },
     {
+      name: 'order',
+      title: 'Orden',
+      type: 'number'
+    }, {
       name: 'description',
       title: 'Descripción',
       type: 'blockContent'
