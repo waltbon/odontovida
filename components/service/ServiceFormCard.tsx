@@ -104,7 +104,9 @@ export default class extends React.Component<Props, State> {
                         {
                             this.state.sent &&
                             <div className="col-lg-12 mt-15 form-btn">
-                                <p>Hemos recibido tu mensaje, nos pondremos en contacto muy pronto</p>
+                                <p className="lime-color">
+                                    <i className="fa fa-check-circle"> </i> 
+                                    Hemos recibido tu mensaje, nos pondremos en contacto muy pronto</p>
                             </div>
                         }
                     </Form>

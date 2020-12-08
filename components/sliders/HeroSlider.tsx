@@ -12,13 +12,13 @@ interface Props {
 export default class extends React.Component<Props> {
 
     heroClass = (mainImageUrl: string) => ({
-        "backgroundImage": `url(${mainImageUrl})`,
-        "paddingTop": "30px"
+        // "backgroundImage": `url(${mainImageUrl})`,
+        background: `linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)), url(${mainImageUrl}), no-repeat, fixed`,
+        paddingTop: "30px"
     })
 
     render() {
         const mainClass = this.heroClass(this.props.mainImageUrl);
-        console.log("extends -> render -> mainClass", mainClass)
         return (<section id={this.props.sliderId} className="bg-fixed hero-section division" style={mainClass}>
             <div className="container">
                 <div className="row d-flex align-items-center">

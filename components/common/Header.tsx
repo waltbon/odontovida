@@ -7,6 +7,7 @@ export default class extends React.Component {
 
     componentDidMount() {
         require('../../public/js/sticky');
+        require('../../public/js/menu');
     }
 
     render() {
@@ -32,7 +33,7 @@ export default class extends React.Component {
                                     </div>
                                     {/* Social Links */}
                                     <div className="headertopright">
-                                        <a className="googleicon" title="WhatsApp" href="#"><i className="fab fa-whatsapp" /> <span className="mobiletext02">WhatsApp</span></a>
+                                        <a className="googleicon" title="WhatsApp" href={`https://wa.me/${value.generalInfo.mainPhone.trim().replace('+','').replace(' ','')}`}><i className="fab fa-whatsapp" /> <span className="mobiletext02">WhatsApp</span></a>
                                         <a className="facebookicon" title="Facebook" href="#"><i className="fab fa-facebook-f" /> <span className="mobiletext02">Facebook</span></a>
                                     </div>
                                 </div>
@@ -97,20 +98,20 @@ export default class extends React.Component {
                                     <nav className="wsmenu clearfix">
                                         <ul className="wsmenu-list">
                                             {/* DROPDOWN MENU */}
-                                            <li aria-haspopup="true"><a href="/">Inicio</a></li>
-
                                             <ServicesMenu services={value.services} />
                                             <DepartmentsMenu doctors={value.doctors} departments={value.departments} />
 
-                                            <li className="nl-simple" aria-haspopup="true"><a href="/especialistas">Doctores</a></li>
-                                            <li className="nl-simple" aria-haspopup="true"><a href="/contacto">Contáctenos</a></li>
+                                            <li aria-haspopup="true"><a href="/centro-radiologico">Centro Radiológico</a></li>
+                                            {/* <li className="nl-simple" aria-haspopup="true"><a href="/especialistas">Doctores</a></li> */}
+                                            {/* <li className="nl-simple" aria-haspopup="true"><a href="/preguntas-frecuentes">Preguntas frecuentes</a></li> */}
+                                            <li className="nl-simple" aria-haspopup="true"><a href="/preguntas-frecuentes">Preguntas frecuentes</a></li>
                                             {/* HIDDEN NAVIGATION MENU BUTTON */}
-                                            <li className="nl-simple header-btn" aria-haspopup="true"><a className="blue-hover" href="/contacto">¿Desea que lo contactemos?</a></li>
+                                            <li className="nl-simple header-btn" aria-haspopup="true"><a className="blue-hover" href="/contacto">¡Escríbanos ahora!</a></li>
                                         </ul>
                                     </nav>	{/* END MAIN MENU */}
                                     {/* NAVIGATION MENU BUTTON */}
                                     <div className="header-button">
-                                        <span className="nl-simple header-btn"><a href="/contacto">¿Desea que lo contactemos?</a></span>
+                                        <span className="nl-simple header-btn"><a href="/contacto">¡Contáctenos ahora!</a></span>
                                     </div>
                                 </div>
                             </div>	{/* END NAVIGATION MENU */}

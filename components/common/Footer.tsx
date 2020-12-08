@@ -72,20 +72,12 @@ export default class extends React.Component {
                                 </div>
 
                                 <div className="col-md-6 col-lg-3">
-                                    <div className="footer-form mb-20">
-                                        <h5 className="h5-xs">Suscríbase:</h5>
-                                        <p className="p-sm m-bottom-20">Esté al día con nuestras últimas noticias y promociones</p>
-                                        <form className="newsletter-form">
-                                            <div className="input-group">
-                                                <input type="email" className="form-control" placeholder="Correo electrónico" required id="s-email" />
-                                                <span className="input-group-btn">
-                                                    <button type="submit" className="btn">
-                                                        <i className="far fa-envelope" />
-                                                    </button>
-                                                </span>
-                                            </div>
-                                            <label htmlFor="s-email" className="form-notification" />
-                                        </form>
+                                    <div className="footer-links mb-20">
+                                        <h5 className="h5-xs">¿Cómo podemos ayudarle?</h5>
+                                        <ul className="clearfix">
+                                            <li><a href="/preguntas-frecuentes">Preguntas frecuentes</a></li>
+                                            <li><a href="/especialistas">Conozca nuestros doctores</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>	  {/* END FOOTER CONTENT */}
@@ -93,7 +85,11 @@ export default class extends React.Component {
                             <div className="bottom-footer">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <p className="footer-copyright">© 2020 <span>Clínica Espcializada Odontovida</span> | Desarrollado por <a style={{ textDecoration: 'underline' }} target="__blank" href="https://cabanadata.com?ref=odontovida">Cabana Data</a> </p>
+                                        <p className="footer-copyright">2020 <span>Clínica Espcializada Odontovida</span>.
+                                            <span style={{ color: 'rgb(185 185 185)' }}>
+                                                Desarrollado por <a style={{ height: 100, textDecoration: 'underline', color: 'rgb(185 185 185)' }} target="__blank" href="https://cabanadata.com?ref=odontovida">Cabana Data</a>
+                                            </span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

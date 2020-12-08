@@ -47,14 +47,15 @@ export const fetchSingleService = async (serviceSlug: string): Promise<IService>
 }
 
 export const fetchAllServicesDetails = async (): Promise<IService[]> => {
-    const data = await fetchQuerySanity<IServicesSanity[]>(`*[_type == "services"]{
+    const data = await fetchQuerySanity<IServicesSanity[]>(`
+    * | [_type == "services"]{
         title,
         shortDescription,
         mainImage,
         'slug': slug.current,
         doctor->,
         _id
-    }`);
+    } | order(title asc)`);
     if (!data || !Array.isArray(data)) {
         return [];
     }

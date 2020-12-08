@@ -51,7 +51,7 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                                     if (ix < 2) {
                                         callToAction = {
                                             text: ix === 0 ? 'Ver tratamientos' : 'Ver especialidades',
-                                            url: ix === 0 ? '/#doctors-1' : '/#services-7'
+                                            url: ix === 0 ? '/#tabs-servicios' : '/#especializades'
                                         };
                                     }
                                     return (<AboutSectionItem key={ix} title={item.title}
@@ -66,22 +66,22 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                             }
                         </AboutSection>
 
-                        {/* // <GeneralInfoSection /> */}
-
-                        <WelcomeSection callToAction={{ text: `Conozca más sobre ${value.principalDoctor.fullname}`, 
+                        <WelcomeSection callToAction={{
+                            text: `Conozca más sobre ${value.principalDoctor.fullname}`,
                             url: generateDoctorUrl(value.principalDoctor) }}
-                            doctorPrincipal={value.principalDoctor} 
-                            title={page.welcomeSection.title} 
+                            doctorPrincipal={value.principalDoctor}
+                            title={page.welcomeSection.title}
                             image={page.welcomeSection.welcomeImage}
-                            subtitle={page.welcomeSection.subtitle} 
-                            description={page.welcomeSection.description} />
+                            subtitle={page.welcomeSection.subtitle}
+                            description={page.welcomeSection.description} >
+                        </WelcomeSection>
 
-                        <section id="doctors-1" className="wide-100 mt-60 bg-lightgrey doctors-section division">
-                            <div className="container">
-                                <SectionTitle title="Tratamientos que ofrecemos"
-                                    description="Conozca algunos de los tratamientos que ofrecemos y siéntase libre de consultarnos en cualquier momento" />
-                                <ServiceTabsContainer services={allServices}/>
-                            </div>
+                        <div className="mb-80 mt-100">
+                            <KPIsInfo />
+                        </div>
+
+                        <section id="tabs-servicios" className="wide-100 tabs-section division ">
+                            <ServiceTabsContainer services={allServices} />
                         </section>
 
                         <section id="info-6" className="bg-blue info-section division">
@@ -107,22 +107,21 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
 
                         </section>
 
-                        <section id="services-7" className="wide-100 mt-40 servicess-section division">
+                        <section id="especializades" className="wide-100 mt-40 servicess-section division">
                             <div className="container">
-                                <SectionTitle title="Especialidades" description="Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
-                        blandit posuere ligula varius congue cursus porta feugiat" />
+                                <SectionTitle title="Especialidades" description="¿Sabe que tipo de especialidades existen? Nosotros podemos ayudarle ante cualquier necesidad sobre ellas." />
 
                                 <div className="row">
                                     <div className="col-md-12">
                                         <CarouselContainer>
                                             {
                                                 allDepartments.map(dpt =>
-                                                    <ServiceBox mainImage={dpt.mainImage} 
-                                                        icon={dpt.icon} 
-                                                        url={generateDepartmentUrl(dpt)} 
-                                                        key={dpt._id} 
-                                                        title={dpt.title} 
-                                                        description={dpt.shortDescription} />)
+                                                    <ServiceBox mainImage={dpt.mainImage}
+                                                        icon={dpt.icon}
+                                                        url={generateDepartmentUrl(dpt)}
+                                                        key={dpt._id}
+                                                        title={dpt.title}
+                                                        description={dpt.description} />)
                                             }
                                         </CarouselContainer>
                                     </div>
@@ -130,9 +129,6 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                                 </div>
                             </div>
                         </section>
-
-                        <KPIsInfo></KPIsInfo>
-
 
                         <section id="reviews-2" className="bg-lightgrey wide-100 reviews-section division">
                             <div className="container">
@@ -149,9 +145,9 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                         </section>
 
                         <VideoSection descriptions={[
-                                "Nuestros pacientes son importantes y una de nuestras prioridades es saber cómo ha sido su experiencia.",
-                                "Somos una familia y así es como deseamos que todos se sientan cuando son atendidos, que se sientan en casa.",
-                                "Aquí encontraras algunas opiniones de nuestros pacientes."]}
+                            "Nuestros pacientes son importantes y una de nuestras prioridades es saber cómo ha sido su experiencia.",
+                            "Somos una familia y así es como deseamos que todos se sientan cuando son atendidos, que se sientan en casa.",
+                            "Aquí encontraras algunas opiniones de nuestros pacientes."]}
                             videoUrl={"/video/testimonial-12.mp4"} title="Testimonial" subtitle={"¿Qué dicen nuestros clientes?"}>
                         </VideoSection>
                     </>)
@@ -162,7 +158,7 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
 }
 
 IndexPage.getInitialProps = async ({ req, res }): Promise<any> => {
-    const prom = await Promise.all([ 
+    const prom = await Promise.all([
         fetchHomePage(), fetchServices.fetchAllServicesDetails(), fetchAllDepartments()
     ]);
     return {

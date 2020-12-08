@@ -25,7 +25,7 @@ export default {
     {
       name: 'shortDescription',
       title: 'Descripción corta',
-      type: 'string'
+      type: 'markdown'
     },
     {
       name: 'mainImage',

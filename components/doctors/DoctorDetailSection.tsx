@@ -30,10 +30,11 @@ export default class extends React.Component<{
                                                 {
                                                     Array.isArray(this.props.doctor.titles) && 
                                                     this.props.doctor.titles.map(title => (
-                                                        <span><i className="fas fa-angle-double-right" /> 
+                                                        <span style={{paddingBottom: '12px'}}>
                                                             {title.title}
                                                             <span className="grey-color" style={{marginRight: '20px', display:'block'}}>
-                                                                {title.university}, {title.years}
+                                                            <i className="fas fa-angle-double-right" /> 
+                                                            {title.university}, {title.years}
                                                             </span>
                                                         </span>))
                                                 }

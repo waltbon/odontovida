@@ -19,9 +19,11 @@ export default class extends React.Component<Props> {
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
                                     {
-                                        Array.isArray(this.props.list) && this.props.list.map((item, ix) => (
-                                            <li key={ix} className="breadcrumb-item"><a href={item.url}>{item.text}</a></li>
-                                        ))
+                                        Array.isArray(this.props.list) && this.props.list.map((item, ix) => {
+                                            const className = `breadcrumb-item ${ix === this.props.list.length - 1 ? 'active':''}`;
+                                            return (<li key={ix} className={className}><a href={item.url}>{item.text}</a></li>)
+                                            }
+                                        )
                                     }
                                     {/* <li className="breadcrumb-item"><a href="index.html">Home</a></li>
                                     <li className="breadcrumb-item"><a href="all-services.html">Our Services</a></li>

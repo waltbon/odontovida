@@ -36,7 +36,7 @@ const IndexPage: NextPage<Props> = ({ department }) => {
                                         <div className="col-lg-8">
                                             <div className="s1-page content-block text-left">
                                                 <h3 className="h3-xl blue-color">{department.title}</h3>
-                                                <p className="p-lg">{department.shortDescription}</p>
+                                                <p className="p-lg">{department.description}</p>
                                                 <BlockContent blocks={department.body} />
                                             </div>
                                         </div>

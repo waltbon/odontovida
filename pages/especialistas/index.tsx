@@ -9,12 +9,8 @@ interface Props {
     doctors: IDoctor[]
 }
 
-const DoctorsPage: NextPage<Props> = ({doctors}) => {
+const DoctorsPage: NextPage<Props> = ({ doctors }) => {
     return (<Layout>
-
-        <>
-            {/* <Breadcrumbs title="Conozca a los especialistas" list={null} /> */}
-
             <section id="doctors-3" className="bg-lightgrey wide-60 doctors-section division">
                 <div className="container">
                     <div className="row">
@@ -22,9 +18,7 @@ const DoctorsPage: NextPage<Props> = ({doctors}) => {
                             {/* Title 	*/}
                             <h3 className="h3-md steelblue-color">Nuestros especialistas</h3>
                             {/* Text */}
-                            <p>Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
-                            blandit posuere ligula varius congue cursus porta feugiat
-                                        </p>
+                            <p>Conozca un poco de nuestros doctores especialistas</p>
                         </div>
                     </div>
 
@@ -49,7 +43,6 @@ const DoctorsPage: NextPage<Props> = ({doctors}) => {
                             ))
                         }
                     </div></div></section>
-        </>)
     </Layout>)
 }
 

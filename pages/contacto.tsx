@@ -35,13 +35,16 @@ const ContactPage: NextPage<Props> = ({ seo }) => {
                                         <div className="contact-box mb-40">
                                             <h5 className="h5-sm steelblue-color">Información general</h5>
                                             <p>{value.generalInfo.largeAddress}</p>
-                                            <p>Email: <a href={value.generalInfo.contactEmail} className="blue-color">{value.generalInfo.contactEmail}</a></p>
+                                            <p>Correo electrónico: <a href={value.generalInfo.contactEmail} className="blue-color">{value.generalInfo.contactEmail}</a></p>
                                         </div>
                                         {/* Patient Experience */}
                                         <div className="contact-box mb-40">
                                             <h5 className="h5-sm steelblue-color">¿Tiene alguna emergencia?</h5>
-                                            <p>Atendemos por WhatsApp al...</p>
-                                            <p>WhatsApp: {value.generalInfo.mainPhone}</p>
+                                            <p>Atendemos su consulta por WhatsApp.</p>
+                                            <p><i className="fab fa-whatsapp"></i> 
+                                            <a href={`https://wa.me/${value.generalInfo.mainPhone.trim().replace('+','').replace(' ','')}`}></a>
+                                                {value.generalInfo.mainPhone}
+                                            </p>
                                         </div>
                                         {/* Working Hours */}
                                         <div className="contact-box mb-40">

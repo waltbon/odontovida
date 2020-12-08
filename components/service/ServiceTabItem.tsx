@@ -31,43 +31,15 @@ export default class extends React.Component<{
                             {svc.shortDescription}
                         </p>
                         {/* Options List */}
-                        <div className="row">
+                        {/* <div className="row">
                             <div className="col-xl-6">
-                                {/* Option #1 */}
+
                                 <div className="box-list m-top-15">
                                     <div className="box-list-icon blue-color"><i className="fas fa-angle-double-right" /></div>
                                     <p className="p-sm">Nemo ipsam egestas volute and turpis dolores quaerat</p>
                                 </div>
-                                {/* Option #2 */}
-                                <div className="box-list">
-                                    <div className="box-list-icon blue-color"><i className="fas fa-angle-double-right" /></div>
-                                    <p className="p-sm">Magna luctus tempor</p>
-                                </div>
-                                {/* Option  #3 */}
-                                <div className="box-list">
-                                    <div className="box-list-icon blue-color"><i className="fas fa-angle-double-right" /></div>
-                                    <p className="p-sm">An enim nullam tempor at pretium purus blandit</p>
-                                </div>
                             </div>
-                            <div className="col-xl-6">
-                                {/* Option #4 */}
-                                <div className="box-list">
-                                    <div className="box-list-icon blue-color"><i className="fas fa-angle-double-right" /></div>
-                                    <p className="p-sm">Magna luctus tempor blandit a vitae suscipit mollis</p>
-                                </div>
-                                {/* Option #5 */}
-                                <div className="box-list m-top-15">
-                                    <div className="box-list-icon blue-color"><i className="fas fa-angle-double-right" /></div>
-                                    <p className="p-sm">Nemo ipsam egestas volute turpis dolores quaerat</p>
-                                </div>
-                                {/* Option #6 */}
-                                <div className="box-list">
-                                    <div className="box-list-icon blue-color"><i className="fas fa-angle-double-right" /></div>
-                                    <p className="p-sm">An enim nullam tempor</p>
-                                </div>
-                            </div>
-                        </div>	{/* End Options List */}
-                        {/* Button */}
+                        </div>	 */}
                         <a href={generateServiceUrl(this.props.service)} className="btn btn-blue blue-hover mt-30">Conozca más y agende</a>
                     </div>
                 </div>	{/* END TAB-1 TEXT */}

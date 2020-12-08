@@ -11,7 +11,7 @@ export default class KPIsInfo extends React.Component {
                             {/* Icon  */}
                             <span className="flaticon-062-cardiogram-3" />
                             {/* Text */}
-                            <h5 className="statistic-number">1,<span className="count-element">632</span></h5>
+                            <h5 className="statistic-number">5,<span className="count-element">632</span></h5>
                             <p className="txt-400">Pacientes felices</p>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ export default class KPIsInfo extends React.Component {
                     <div className="col-md-6 col-lg-3">
                         <div className="statistic-block icon-lg wow fadeInUp" data-wow-delay="0.8s">
                             {/* Icon  */}
-                            <span className="flaticon-065-hospital-bed" />
+                            <span className="flaticon-105-first-aid-kit-2" />
                             {/* Text */}
                             <h5 className="statistic-number"><span className="count-element">6</span></h5>
                             <p className="txt-400">Especialidades</p>
@@ -41,7 +41,7 @@ export default class KPIsInfo extends React.Component {
                             {/* Icon  */}
                             <span className="flaticon-040-placeholder" />
                             {/* Text */}
-                            <h5 className="statistic-number"><span className="count-element">5</span></h5>
+                            <h5 className="statistic-number"><span className="count-element">14</span></h5>
                             <p className="txt-400">Tratamientos</p>
                         </div>
                     </div>

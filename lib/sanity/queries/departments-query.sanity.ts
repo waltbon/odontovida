@@ -5,7 +5,7 @@ interface IDepartmentSanity {
     _id: string;
     title: string;
     slug: any;
-    shortDescription: string;
+    description: string;
     icon: string;
     body: any;
     mainImage:any;
@@ -14,7 +14,7 @@ interface IDepartmentSanity {
 export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
     const data = await fetchQuerySanity<IDepartmentSanity[]>(`*[_type == "departments"]{
         title,
-        shortDescription,
+        description,
         icon,
         mainImage,
         'slug': slug.current,
@@ -28,7 +28,7 @@ export const fetchAllDepartments = async (): Promise<IDepartment[]> => {
         return {
             title: service.title,
             slug: service.slug,
-            shortDescription: service.shortDescription,
+            description: service.description,
             _id: service._id,
             mainImage: service.mainImage,
             body: service.body,
@@ -52,11 +52,12 @@ export const fetchAllDepartmentsSimple = async (): Promise<IDepartment[]> => {
         return {
             title: service.title,
             slug: service.slug,
-            shortDescription: service.shortDescription,
+            // shortDescription: service.shortDescription,
             _id: service._id,
             mainImage: service.mainImage,
             body: service.body,
-            icon: service.icon
+            icon: service.icon,
+            description: service.description
         }
     });
 }
@@ -64,7 +65,7 @@ export const fetchAllDepartmentsSimple = async (): Promise<IDepartment[]> => {
 export const fetchSingleDepartment = async (slug: string): Promise<IDepartment> => {
     const data = await fetchQuerySanity<IDepartmentSanity>(`*[_type == "departments" && slug.current == "${slug}"][0]{
         title,
-        shortDescription,
+        description,
         icon,
         mainImage,
         'slug': slug.current,
@@ -78,7 +79,7 @@ export const fetchSingleDepartment = async (slug: string): Promise<IDepartment> 
     return {
         title: data.title,
         slug: data.slug,
-        shortDescription: data.shortDescription,
+        description: data.description,
         mainImage: data.mainImage,
         body: data.body,
         icon: data.icon,

@@ -4,6 +4,6 @@ export interface IDepartment {
     title: string;
     icon?: string;
     mainImage:any;
-    shortDescription: string;
+    description: string;
     body: any;
 }

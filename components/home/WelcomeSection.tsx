@@ -15,7 +15,7 @@ export default class extends React.Component<{
 }> {
     render() {
         return (
-            <section id="info-4" className="pt-100 mt-20 mb-40 about-section division">
+            <section id="info-4" className="pt-100 mt-20 mb-100 pb-40 about-section division">
                 <div className="container">
                     <div className="row d-flex align-items-center">
                         {/* IMAGE BLOCK */}
