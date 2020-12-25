@@ -1,4 +1,5 @@
 import { IDepartment } from './department.interface';
+import { IUseCase } from './use-cases.inteface';
 
 export interface IDoctor {
     _id: string;
@@ -10,7 +11,8 @@ export interface IDoctor {
     personalImage?: any;
     department: IDepartment;
     titles: ITitle[]
-    order: number
+    order: number;
+    useCases?: IUseCase[]
 }
 
 export interface ITitle {

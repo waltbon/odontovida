@@ -102,12 +102,13 @@ const CentroRadiologicoPage: NextPage<any> = ({
                             <div className="tab-content" id="pills-tabContent">
                             {
                                 services.map((service, ix) => {
-                                    const gallery = Array.isArray(service.centroRadServiceGallery) ? service.centroRadServiceGallery.map(item => {
+                                    const gallery = Array.isArray(service.centroRadServiceFeatures) ? service.centroRadServiceFeatures.map(item => {
                                         return {
                                             title: item.title,
                                             url: urlFor(item.image).url()
                                         }
                                     }) : [];
+                                    
                                     return (
                                     <TabPane 
                                         key={ix}

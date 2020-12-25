@@ -16,7 +16,7 @@ export default class extends React.Component<{
             }
             <h5 className="h5-xs steelblue-color">{this.props.title}</h5>
             <p>{this.props.description}
-                <a href={this.props.url} className="btn btn-blue" style={{ marginTop: '10px' }}>Conoza más...</a>
+                <a href={this.props.url} className="btn btn-lime" style={{ marginTop: '10px' }}>Ver más</a>
             </p>
         </div>
 

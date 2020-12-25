@@ -32,7 +32,7 @@ html {
 body {
   /* font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
   font-family: 'f37Ginger', Helvetica, Arial, sans-serif;
-  color: #333;
+  color: #1a1a1a;
   font-weight: 300;
 }
 
@@ -285,7 +285,7 @@ body {
 /*------------------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {
-  color: #525252;
+  color: #0a0a0a;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   letter-spacing: -0.25px;
@@ -482,6 +482,10 @@ ul.content-list li:last-child {
   color: #fff;
   background-color: #855c98;
   border-color: #855c98;
+}
+
+.btn-blue:hover {
+  color: #fff;
 }
 
 .btn-darkgreen,
@@ -725,7 +729,7 @@ span.section-id {
   text-transform: uppercase;
   display: block;
   letter-spacing: 0.5px;
-  margin-bottom: 28px;   
+  margin-bottom: 8px;   
 }
 
 span.id-color {
@@ -2817,7 +2821,7 @@ td.text-right {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0; 
-  padding: 17px 20px;
+  padding: 10px 12px;
   margin-right: 0;
   margin-bottom: 4px;
 }

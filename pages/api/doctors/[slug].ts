@@ -8,7 +8,7 @@ export default async (req, res) => {
         return;
     }
 
-    const data = await fetchCMS.fetchDoctor(slug);
+    const data = await fetchCMS.fetchSingleDoctor.getSingleDoctor(slug);
     res.status(200);
     res.json(data);
 }

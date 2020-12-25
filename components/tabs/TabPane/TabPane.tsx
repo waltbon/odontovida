@@ -1,4 +1,3 @@
-import { Gallery } from '../../Gallery';
 import { Markdown } from '../../ui'
 import { IProps } from './types'
 
@@ -6,7 +5,8 @@ export const TabPane: React.FC<IProps> = ({
     title,
     imageURL,
     markdownContent,
-    gallery,
+    children,
+    // gallery,
     ...props
 }) => {
     const tabId = `tab-${props.id}`;
@@ -32,14 +32,7 @@ export const TabPane: React.FC<IProps> = ({
                             <Markdown content={markdownContent} />
                         </div>
 
-
-                        {
-                            Array.isArray(gallery) && !!gallery.length &&
-                            <div id="gallery-1" className="gallery-section division">
-                                <h3 className="h4-md steelblue-color pb-2">Galería de imágenes</h3>
-                                <Gallery gallery={gallery} />
-                            </div>
-                        }
+                        {children}
                     </div>
                 </div>
             </div>

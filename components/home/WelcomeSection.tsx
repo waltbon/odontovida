@@ -38,11 +38,11 @@ export default class extends React.Component<{
                                         <p className="p-small mb-15">
                                             {this.props.doctorPrincipal.fullname} 
                                         <br/> 
-                                        <span className="lime-color">
+                                        <span className="blue-color">
                                             {this.props.doctorPrincipal.title}
                                         </span>
                                             </p>
-                                        <a className="btn btn-blue" href={this.props.callToAction.url}>{this.props.callToAction.text}</a>
+                                        <a className="btn btn-lime" href={this.props.callToAction.url}>{this.props.callToAction.text}</a>
                                     </div>
                                 }
                             </div>

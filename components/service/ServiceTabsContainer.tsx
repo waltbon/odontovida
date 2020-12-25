@@ -31,7 +31,7 @@ export default class extends React.Component<Props> {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-9 section-title text-left">
-                        <h3 className="h3-md steelblue-color text-uppercase">Nuestros Servicios</h3>
+                        <h2 className="h2-md">Nuestros servicios</h2>
                         <p style={{ paddingLeft: '0px' }}>Conozca nuestros servicios y siéntase en la libertad de enviarnos sus consultas, nuestros especialistas pueden ayudarle.</p>
                     </div>
                 </div>

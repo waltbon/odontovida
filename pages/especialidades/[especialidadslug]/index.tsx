@@ -28,15 +28,15 @@ const IndexPage: NextPage<Props> = ({ department }) => {
                 {
                     (value) => (
                         <>
-                            <Breadcrumbs title={`¿Qué necesito saber sobre ${department.title}?`} list={breadcrumbsList} />
+                            {/* <Breadcrumbs title={`¿Qué necesito saber sobre ${department.title}?`} list={breadcrumbsList} /> */}
                             <div id="service-page" className="wide-60 service-page-section division">
                                 <div className="container">
                                     <div className="row">
 
                                         <div className="col-lg-8">
                                             <div className="s1-page content-block text-left">
-                                                <h3 className="h3-xl blue-color">{department.title}</h3>
-                                                <p className="p-lg">{department.description}</p>
+                                                <h2 className="h2-lg mb-4 blue-color">{department.title}</h2>
+                                                <p className="p-lg blue-color">{department.description}</p>
                                                 <BlockContent blocks={department.body} />
                                             </div>
                                         </div>

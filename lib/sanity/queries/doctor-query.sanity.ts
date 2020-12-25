@@ -3,7 +3,7 @@ import { IDoctor } from '../../../utils/interfaces/pages/doctor.interface';
 
 interface IDoctorSanity extends IDoctor {}
 
-export default async (slug: string): Promise<IDoctor> => {
+export const getSingleDoctor =  async (slug: string): Promise<IDoctor> => {
     console.log("slug", slug)
     const data = await fetchQuerySanity<IDoctorSanity>(`*[_type == "doctors" && slug.current == "${slug}"][0]{
         'slug': slug.current,
@@ -12,6 +12,12 @@ export default async (slug: string): Promise<IDoctor> => {
         description,
         department->{_id,slug,title},
         personalImage,
+        "useCases": *[ _type == "useCases" && doctor._ref == ^._id ]{
+            useCaseImages,
+            title,
+            'slug': slug.current,
+            _id
+        },
         order,
         "pictureUrl": personalImage.asset->url,
         titles,
@@ -28,6 +34,7 @@ export default async (slug: string): Promise<IDoctor> => {
         pictureUrl: data.pictureUrl,
         personalImage: data.personalImage,
         slug: data.slug,
+        useCases: data.useCases,
         department: data.department,
         titles: data.titles,
         order: data.order,

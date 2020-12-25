@@ -18,7 +18,8 @@ export interface ICentroRadiologicoService {
     slug: string;
     content: any;
     image: any;
-    centroRadServiceGallery?: ICentroRadServiceGallery[];
+    useCaseImage: any;
+    centroRadServiceFeatures?: ICentroRadServiceGallery[];
 }
 
 export interface IHeaderSlider {
@@ -30,5 +31,6 @@ export interface IHeaderSlider {
 
 interface ICentroRadServiceGallery {
     title: string;
+    content: string;
     image: any;
 }

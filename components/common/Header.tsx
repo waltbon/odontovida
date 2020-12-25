@@ -18,7 +18,7 @@ export default class extends React.Component {
                         <header id="header-2" className="header ">
                             <div className="wsmobileheader clearfix">
                                 <a id="wsnavtoggle" className="wsanimated-arrow"><span /></a>
-                                <span className="smllogo"><img src="/images/logo.jpg" width={140} height={40} alt="mobile-logo" /></span>
+                                <span className="smllogo"><img src="/images/logo.jpg" width={140} height={50} alt="mobile-logo" /></span>
                                 <a href="tel:123456789" className="callusbtn"><i className="fas fa-phone" /></a>
                             </div>
 
@@ -93,7 +93,7 @@ export default class extends React.Component {
                                 <div className="wsmainwp clearfix">
                                     {/* LOGO IMAGE */}
                                     {/* For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) */}
-                                    <div className="desktoplogo"><a href="#hero-9"><img src="/images/logo.jpg" width={120} height={40} alt="header-logo" /></a></div>
+                                    <div className="desktoplogo"><a href="#hero-9"><img src="/images/logo.jpg" width={120} height={50} alt="header-logo" /></a></div>
                                     {/* MAIN MENU */}
                                     <nav className="wsmenu clearfix">
                                         <ul className="wsmenu-list">

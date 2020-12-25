@@ -28,7 +28,7 @@ const ServicePage: NextPage<Props> = ({
         <MainInfoContext.Consumer>
             {
                 value => (<>
-                    <Breadcrumbs title={service.subtitle} list={breadcrumbsList} />
+                    {/* <Breadcrumbs title={service.subtitle} list={breadcrumbsList} /> */}
 
                     <div id="service-page" className="wide-60 service-page-section division border-bottom-lime">
                         <div className="container">
@@ -36,7 +36,7 @@ const ServicePage: NextPage<Props> = ({
 
                                 <div className="col-lg-7">
                                     <div className="s2-page pr-30 mb-40">
-                                        <h3 className="h3-md blue-color border-bottom-lime">{service.title}</h3>
+                                        <h2 className="h2-md blue-color border-bottom-lime">{service.title}</h2>
                                         
                                         {/* <h4 className="h4-sm blue-color">{service.subtitle}</h4> */}
 

@@ -14,10 +14,8 @@ export default class extends React.Component<Props> {
         return (<>
             {/* SIDEBAR TABLE */}
             <div className="sidebar-table sidebar-div mb-50">
-                <h4 className="h4-md">Solicite su cita</h4>
-                <p className="p-sm pb-4">Porta semper lacus cursus, feugiat primis ultrice ligula risus auctor at
-                tempus feugiat dolor lacinia cursus nulla vitae massa
-                    </p>
+                <h4 className="h4-md">Contáctenos ahora</h4>
+                <p className="p-sm pb-4">¡Queremos ayuarle! Si tiene alguna consulta <strong> nosotros le podemos ayudar</strong>, déjenos su mensaje y le contactaremos para brindarle la información completa.</p>
 
                 <ServiceFormCard serviceType="department" currentServiceId={this.props.currentDptId} services={this.props.departments} />
 

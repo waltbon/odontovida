@@ -67,7 +67,7 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                         </AboutSection>
 
                         <WelcomeSection callToAction={{
-                            text: `Conozca más sobre ${value.principalDoctor.fullname}`,
+                            text: `Conozca más sobre la doctra`,
                             url: generateDoctorUrl(value.principalDoctor) }}
                             doctorPrincipal={value.principalDoctor}
                             title={page.welcomeSection.title}
@@ -80,7 +80,7 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                             <KPIsInfo />
                         </div>
 
-                        <section id="tabs-servicios" className="wide-100 tabs-section division ">
+                        <section id="tabs-servicios" className="wide-100 tabs-section ">
                             <ServiceTabsContainer services={allServices} />
                         </section>
 

@@ -73,7 +73,7 @@ export default {
         type: 'image'
       }
       ]
-    }, 
+    },
     {
       title: 'Servicios',
       name: 'centroRadiologicoServices',
@@ -102,19 +102,27 @@ export default {
           name: 'image',
           title: 'Imagen (700x700)',
           type: 'image'
-        }, 
+        }, {
+          name: 'useCaseImage',
+          title: 'Imagen de caso de uso',
+          type: 'image'
+        },
         {
-          title: 'Galería de imágenes',
-          name: 'centroRadServiceGallery',
+          title: 'Características',
+          name: 'centroRadServiceFeatures',
           type: 'array',
           of: [{
             title: 'Imagen',
-            name: 'centroRadServiceGalleryImage',
+            name: 'centroRadServiceFeatureImage',
             type: 'object',
             fields: [{
               title: 'Título',
               name: 'title',
               type: 'string',
+            }, {
+              title: 'Descripción',
+              name: 'content',
+              type: 'markdown'
             }, {
               name: 'image',
               title: 'Imagen',

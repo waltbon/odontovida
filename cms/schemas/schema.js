@@ -12,6 +12,7 @@ import services from './services'
 import departments from './departments'
 import doctors from './doctors'
 import faqs from './faqs'
+import useCases from './useCases'
 import centroRadiologicoPage from './centroRadiologicoPage'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -29,6 +30,7 @@ export default createSchema({
     doctors,
     faqs,
     departments,
+    useCases,
     centroRadiologicoPage,
     blockContent
   ])

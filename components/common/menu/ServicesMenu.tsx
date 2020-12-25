@@ -47,7 +47,7 @@ export default class extends React.Component<Props, State> {
                             <li className="title">¿Qué tratamientos ofrecemos?</li>
                             {
                                 Array.isArray(this.props.services) && this.props.services.map(service =>
-                                    (<li key={service.slug} onMouseOver={this.onMouseOverHandler}><a id={service.slug} href={generateServiceUrl(this.state.currentService)}>{service.title}</a></li>))
+                                    (<li key={service.slug} onMouseOver={this.onMouseOverHandler}><a id={service.slug} href={generateServiceUrl(service)}>{service.title}</a></li>))
                             }
                         </ul>
                     </div>

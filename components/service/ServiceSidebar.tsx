@@ -43,8 +43,8 @@ export default class extends React.Component<Props> {
 
             {/* SIDEBAR TABLE */}
             <div className="sidebar-table sidebar-div mb-50">
-                <h4 className="h4-md border-bottom-lime">¿Tiene alguna pregunta?</h4>
-                <p className="p-sm pb-4">Si tiene alguna consulta <strong> nosotros con todo gusto le podemos ayudar</strong>, déjenos su mensaje y le contactaremos para brindarle la información completa.</p>
+                <h4 className="h4-md border-bottom-lime">Contáctenos ahora</h4>
+                <p className="p-sm pb-4">¡Queremos ayuarle! Si tiene alguna consulta <strong> nosotros le podemos ayudar</strong>, déjenos su mensaje y le contactaremos para brindarle la información completa.</p>
                 <ServiceFormCard serviceType="service" currentServiceId={this.props.currentServiceId} services={this.props.services} />
             </div>
             

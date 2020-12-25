@@ -4,6 +4,7 @@ export interface IProps {
     imageURL: string;
     markdownContent: any;
     gallery?: IGalleryItem[];
+    useCaseImage?: any;
     c2aURL?: string;
     selected?: boolean;
 }

@@ -7,6 +7,7 @@ import DoctorDetailSection from '../../components/doctors/DoctorDetailSection';
 import Meta from '../../components/common/Meta';
 import { MainInfoContext } from '../../contexts/MainInfoContext';
 import Layout from '../../components/common/Layout';
+import { fetchSingleDoctor } from '../../lib/sanity/queries';
 
 
 interface Props {
@@ -31,7 +32,7 @@ const IndexPage: NextPage<Props> = ({ doctor }) => {
 
 IndexPage.getInitialProps = async ({ req, query }): Promise<any> => {
     const { doctorslug } = query;
-    const doctor = await DoctorsApi.getSingleDoctor(doctorslug as string);
+    const doctor = await fetchSingleDoctor.getSingleDoctor(doctorslug as string);
     return {
         doctor
     };
