@@ -4692,8 +4692,9 @@ p.foo-email a {
 }
 
 p.footer-copyright {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   margin-bottom: 0;
+  color: #6e6e6e;
 }
 
 p.footer-copyright span {
@@ -5456,7 +5457,7 @@ ul.blog-category-list li:hover {
 /*  ACCORDION 
 /*------------------------------------------*/
 
-#faqs-page .card-header {
+#accordion, #faqs-page .card-header {
   padding: 22px 0;
   background-color: transparent;
   border: none;

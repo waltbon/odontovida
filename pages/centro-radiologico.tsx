@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import React from 'react';
+import { AccordionItem } from '../components/common/AccordionItem';
 import Layout from '../components/common/Layout';
 import Meta from '../components/common/Meta';
 import SlidesContainer from '../components/sliders/SlidesContainer';
@@ -26,20 +27,26 @@ const CentroRadiologicoPage: NextPage<any> = ({
                             return (
                                 <li id={id} key={slider._id}>
                                     {/* Background Image */}
-                                    <img  src={urlFor(slider.image).url()} alt="slide-background" />
+                                    <img src={urlFor(slider.image).url()} alt="slide-background" />
                                     {/* Image Caption */}
                                     <div className="caption d-flex align-items-center right-align">
                                         <div className="container">
                                             <div className="row">
                                                 <div className="col-md-9 col-lg-8 col-xl-7">
                                                     <div className="caption-txt text-left white-color">
-                                                        <h2>{slider.title}</h2>
-                                                        <div className="box-list">
-                                                            <div className="box-list-icon"><i className="fas fa-genderless" /></div>
-                                                            <p className="p-md">
-                                                                {slider.text}
-                                                            </p>
-                                                        </div>
+                                                        {
+                                                            slider.title?.length > 1 &&
+                                                            <>
+                                                                <h4>Nuestro centro radiológico es</h4>
+                                                                <h2>{slider.title}</h2>
+                                                                <div className="box-list">
+                                                                    <div className="box-list-icon" style={{ listStyle: 'none' }}></div>
+                                                                    <p className="p-lg">
+                                                                        {slider.text}
+                                                                    </p>
+                                                                </div>
+                                                            </>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
@@ -80,12 +87,12 @@ const CentroRadiologicoPage: NextPage<any> = ({
             {/* SERVICE TABS */}
             <section id="tabs-1" className="wide-100 tabs-section division">
                 <div className="container">
-					<div className="row">	
-						<div className="col-lg-10 offset-lg-1 section-title pb-20">		
-							<h3 className="h3-md steelblue-color">Servicios que ofrecemos</h3>	
-							<p>Estos son los tipos de estudios radiológicos que puede encontrar.</p>
-						</div> 
-					</div>
+                    <div className="row">
+                        <div className="col-lg-10 offset-lg-1 section-title pb-20">
+                            <h3 className="h3-md steelblue-color">Servicios que ofrecemos</h3>
+                            <p>Estos son los tipos de estudios radiológicos que puede encontrar.</p>
+                        </div>
+                    </div>
 
                     <div className="row">
                         <div className="col-md-12">
@@ -100,26 +107,58 @@ const CentroRadiologicoPage: NextPage<any> = ({
                             </div>
 
                             <div className="tab-content" id="pills-tabContent">
-                            {
-                                services.map((service, ix) => {
-                                    const gallery = Array.isArray(service.centroRadServiceFeatures) ? service.centroRadServiceFeatures.map(item => {
-                                        return {
-                                            title: item.title,
-                                            url: urlFor(item.image).url()
-                                        }
-                                    }) : [];
-                                    
-                                    return (
-                                    <TabPane 
-                                        key={ix}
-                                        id={ix.toString()}
-                                        selected={ix === 0}
-                                        markdownContent={service.content} 
-                                        title={service.name} 
-                                        gallery={gallery}
-                                        imageURL={urlFor(service.image).width(700).height(700).url()}  
-                                    />)
-                                })
+                                {
+                                    services.map((service, ix) => {
+                                        const gallery = Array.isArray(service.centroRadServiceFeatures) ? service.centroRadServiceFeatures.map(item => {
+                                            return {
+                                                title: item.title,
+                                                url: urlFor(item.image).url()
+                                            }
+                                        }) : [];
+
+                                        return (
+                                            <TabPane
+                                                key={ix}
+                                                id={ix.toString()}
+                                                selected={ix === 0}>
+
+                                                <div className="row d-flex align-items-top">
+                                                    <div className="col-lg-4">
+                                                        <div className="tab-img">
+                                                            <img className="img-fluid" src={urlFor(service.image).width(700).height(700).url()} alt="tab-image" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-lg-8">
+                                                        <div className="txt-block pc-30">
+                                                            <h3 className="h3-md steelblue-color">{service.name}</h3>
+                                                            <div className="mb-60">
+                                                                <Markdown content={service.content} />
+                                                            </div>
+
+                                                            {
+                                                                Array.isArray(service.centroRadServiceFeatures) && !!service.centroRadServiceFeatures.length &&
+                                                                <div id="accordion" role="tablist">
+                                                                    {
+                                                                        service.centroRadServiceFeatures.map((feat, ix) => (
+                                                                            <AccordionItem id={ix.toString()} title={feat.title} collapsed={ix===0}  >
+                                                                                <div style={{
+                                                                                    padding: "8px 8px"
+                                                                                }}>  
+                                                                                    <Markdown content={feat.content} />
+                                                                                    <img className="img-fluid" src={urlFor(feat.image).url()} alt={feat.title}/>
+                                                                                </div>
+                                                                            </AccordionItem>
+                                                                        ))
+                                                                    }
+                                                                </div>
+
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </TabPane>
+                                        )
+                                    })
                                 }
                             </div>
                         </div>

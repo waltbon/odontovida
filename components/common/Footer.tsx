@@ -84,10 +84,9 @@ export default class extends React.Component {
                             {/* FOOTER COPYRIGHT */}
                             <div className="bottom-footer">
                                 <div className="row">
-                                    <div className="col-md-12">
-                                        <p className="footer-copyright">2020 <span>Clínica Espcializada Odontovida</span>.
-                                            <span style={{ color: 'rgb(185 185 185)' }}>
-                                                Desarrollado por <a style={{ height: 100, textDecoration: 'underline', color: 'rgb(185 185 185)' }} target="__blank" href="https://cabanadata.com?ref=odontovida">Cabana Data</a>
+                                    <div className="col-md-12 block">
+                                        <p className="footer-copyright">Clínica Espcializada Odontovida, 2021.
+                                            <span className="pull-right" style={{ color: 'rgb(185 185 185)' }}> Desarrollado por <a style={{ height: 100, textDecoration: 'underline', color: 'rgb(185 185 185)' }} target="__blank" href="https://cabanadata.com?ref=odontovida">Cabana Data</a>
                                             </span>
                                         </p>
                                     </div>

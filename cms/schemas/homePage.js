@@ -49,7 +49,31 @@ export default {
         title: 'Imagen principal',
         type: 'image'
       }]
-    }, {
+    }, 
+    {
+      title: 'Slider de imágenes',
+      name: 'headerSliders',
+      type: 'array',
+      of: [{
+        title: 'Slider',
+        name: 'slider',
+        type: 'object',
+        fields: [{
+          title: 'Título',
+          type: 'string',
+          name: 'title'
+        }, {
+          type: 'text',
+          title: 'Párrafo',
+          name: 'text'
+        }, {
+          name: 'image',
+          title: 'Imagen (1920x1080)',
+          type: 'image'
+        }]
+      }]
+    },
+    {
       title: 'Items de sección de introducción',
       name: 'aboutSection',
       type: 'array',

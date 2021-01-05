@@ -3,7 +3,7 @@ import { generateServiceUrl } from '../../utils/common/urls';
 import { IService } from '../../utils/interfaces/pages/service.interface';
 import { Markdown } from '../ui';
 import { ServiceTitle } from './ServiceTitle';
-
+declare var $: any;
 interface Props {
     services: IService[]
 }
@@ -11,6 +11,26 @@ interface Props {
 export default class extends React.Component<Props> {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        $('.nav-pills li').on('click', '[href^="#"]', function (e) {
+            var $nav;
+            // make sure navigation hasn't already been prevented
+            if ( e && e.isDefaultPrevented() ) return
+            // get a reference to the offending navbar
+            $nav = $('div.tab-content')
+    
+            // check if the navbar is fixed
+            if ( $nav.css('position') !== "fixed" ) return
+          
+            // listen for when the browser performs the scroll
+            $(window).one('scroll', function () {
+              // scroll the window up by the height of the navbar
+              window.scrollBy(0, -$nav.height())
+            });
+          
+          });
     }
 
     handleOnClick(e) {

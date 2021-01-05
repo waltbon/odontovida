@@ -37,12 +37,19 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                     value => (<>
                         <Meta seo={page.seo} />
 
+<section id="hero-11" className="bg-fixed hero-section division">
+
                         <SlidesContainer>
-                            <HeroSlider sliderId="hero-1"
-                                mainImageUrl={urlFor(page.mainHeader.mainImage).url()}
-                                subtitle={page.mainHeader.subtitle} title={page.mainHeader.title} paragraph={page.mainHeader.paragraph} />
+                            {
+                                Array.isArray(page.headerSliders) && page.headerSliders.map((slider, ix) => (
+                                <HeroSlider key={ix} sliderId={`slider-${ix}`}
+                                    mainImageUrl={urlFor(slider.image).url()}
+                                    subtitle={page.mainHeader.subtitle} title={slider.title} paragraph={slider.text}     />
+                                ))
+                            }
                         </SlidesContainer>
 
+                                    </section>
                         <AboutSection>
                             {
                                 Array.isArray(page.aboutSection) && page.aboutSection.map((item, ix) => {
@@ -148,7 +155,7 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                             "Nuestros pacientes son importantes y una de nuestras prioridades es saber cómo ha sido su experiencia.",
                             "Somos una familia y así es como deseamos que todos se sientan cuando son atendidos, que se sientan en casa.",
                             "Aquí encontraras algunas opiniones de nuestros pacientes."]}
-                            videoUrl={"/video/testimonial-12.mp4"} title="Testimonial" subtitle={"¿Qué dicen nuestros clientes?"}>
+                            videoUrl={"https://www.youtube.com/watch?v=hJCzj5cxOV0"} title="Testimonial" subtitle={"¿Qué dicen nuestros clientes?"}>
                         </VideoSection>
                     </>)
                 }

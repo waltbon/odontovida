@@ -1,3 +1,4 @@
+import { IHeaderSlider } from '../header-slider.interface';
 import ISeo from './seo.interface';
 
 export interface IHomePage {
@@ -9,6 +10,7 @@ export interface IHomePage {
         paragraph: string;
         mainImage: any;
     }
+    headerSliders: IHeaderSlider[];
     welcomeSection: {
         title: string;
         subtitle: string;

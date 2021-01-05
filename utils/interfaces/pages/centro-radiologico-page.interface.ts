@@ -1,3 +1,4 @@
+import { IHeaderSlider } from '../header-slider.interface';
 import ISeo from './seo.interface';
 
 export interface ICentroRadiologicoPage {
@@ -20,13 +21,6 @@ export interface ICentroRadiologicoService {
     image: any;
     useCaseImage: any;
     centroRadServiceFeatures?: ICentroRadServiceGallery[];
-}
-
-export interface IHeaderSlider {
-    _id: string;
-    title: string;
-    text: string;
-    image: any;
 }
 
 interface ICentroRadServiceGallery {

@@ -759,7 +759,7 @@
   #tabs-servicios .nav-item { width: 100%; text-align: center; margin: 0 0 5px 0; }
   .nav-pills .nav-link { font-size: 1.05rem; padding: 9px 22px; margin-right: 2px; }
   #tabs-servicios .nav-pills .nav-link { font-size: 1.15rem;  padding: 16px 20px; border-right: none; border-bottom: 2px solid transparent;  }
-  #tabs-servicios .nav-pills .nav-link.active, #tabs-servicios .nav-pills .nav-link.active:hover {border-bottom: 2px solid #00a3c8; border-right: none;}
+  #tabs-servicios .nav-pills .nav-link.active, #tabs-servicios .nav-pills .nav-link.active:hover { border-right: none;}
   .nav-pills .nav-link span { display: none; }
 
   .tab-pane p.mb-30 { margin-bottom: 16px; }
@@ -1252,7 +1252,7 @@
   #tabs-1 .nav-item, #tabs-servicios .nav-item { width: 100%; text-align: center; margin: 0 0 5px 0; }
   .nav-pills .nav-link { font-size: 1.15rem; padding: 16px 30px; }
   #tabs-servicios .nav-pills .nav-link { font-size: 1.15rem;  padding: 16px 20px; border-right: none; border-bottom: 2px solid transparent;  }
-  #tabs-servicios .nav-pills .nav-link.active, #tabs-servicios .nav-pills .nav-link.active:hover {border-bottom: 2px solid #00a3c8; border-right: none;}
+  #tabs-servicios .nav-pills .nav-link.active, #tabs-servicios .nav-pills .nav-link.active:hover { border-right: none;}
   .nav-pills .nav-link span { display: none; }
 
   .tab-pane p.mb-30 { margin-bottom: 16px; }

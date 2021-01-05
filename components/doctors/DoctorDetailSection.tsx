@@ -46,7 +46,7 @@ export default class extends React.Component<{
                 <div className="row">
                     {/* DOCTOR PHOTO */}
                     <div className="col-md-5">
-                        <div className="doctor-photo mb-40">
+                        <div className="doctor-photo mb-20">
                             {/* Photo */}
                             <img className="img-fluid" src={this.props.doctor.pictureUrl} alt="doctor-foto" />
                             {/* Doctor Info */}
@@ -94,8 +94,9 @@ export default class extends React.Component<{
                         <div className="doctor-bio">
                             <h5 className="h5-md blue-color">Biografía</h5>
                             <BlockContent blocks={this.props.doctor.description} />
-                            <div className="certificates pt-30">
-                                <h5 className="h5-md blue-color">Casos de uso</h5>
+                            <div className="certificates pt-20">
+                                <h5 className="h5-md blue-color">Aplicaciones</h5>
+                                <p className="pb-2">Conozca algunas de las aplicaciones de mi servicio, aquí podrá ver el antes y el después de nuestros clientes.</p>
                                 <div className="owl-carousel owl-theme reviews-holder">
                                     {
                                         Array.isArray(this.props.doctor.useCases) && !!this.props.doctor.useCases.length &&
