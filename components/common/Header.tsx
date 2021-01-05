@@ -19,7 +19,7 @@ export default class extends React.Component {
                             <div className="wsmobileheader clearfix">
                                 <a id="wsnavtoggle" className="wsanimated-arrow"><span /></a>
                                 <span className="smllogo"><img src="/images/logo.jpg" width={140} height={50} alt="mobile-logo" /></span>
-                                <a href="tel:123456789" className="callusbtn"><i className="fas fa-phone" /></a>
+                                <a href={`tel:${value.generalInfo.mainPhone}`} className="callusbtn"><i className="fas fa-phone" /></a>
                             </div>
 
                             {/* HEADER STRIP */}
@@ -93,7 +93,7 @@ export default class extends React.Component {
                                 <div className="wsmainwp clearfix">
                                     {/* LOGO IMAGE */}
                                     {/* For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) */}
-                                    <div className="desktoplogo"><a href="#hero-9"><img src="/images/logo.jpg" width={120} height={50} alt="header-logo" /></a></div>
+                                    <div className="desktoplogo"><a href="/"><img src="/images/logo.jpg" width={120} height={50} alt="header-logo" /></a></div>
                                     {/* MAIN MENU */}
                                     <nav className="wsmenu clearfix">
                                         <ul className="wsmenu-list">
@@ -111,7 +111,7 @@ export default class extends React.Component {
                                     </nav>	{/* END MAIN MENU */}
                                     {/* NAVIGATION MENU BUTTON */}
                                     <div className="header-button">
-                                        <span className="nl-simple header-btn"><a href="/contacto">¡Contáctenos ahora!</a></span>
+                                        <span className="nl-simple header-btn d-sm-none"><a href="/contacto">¡Contáctenos ahora!</a></span>
                                     </div>
                                 </div>
                             </div>	{/* END NAVIGATION MENU */}

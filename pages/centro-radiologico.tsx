@@ -131,7 +131,7 @@ const CentroRadiologicoPage: NextPage<any> = ({
                                                     <div className="col-lg-8">
                                                         <div className="txt-block pc-30">
                                                             <h3 className="h3-md steelblue-color">{service.name}</h3>
-                                                            <div className="mb-60">
+                                                            <div className="mb-30">
                                                                 <Markdown content={service.content} />
                                                             </div>
 

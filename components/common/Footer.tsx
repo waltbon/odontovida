@@ -1,5 +1,6 @@
 import React from 'react';
 import { MainInfoContext } from '../../contexts/MainInfoContext';
+import { generateDepartmentUrl } from '../../utils/common/urls';
 
 export default class extends React.Component {
     render() {
@@ -41,12 +42,12 @@ export default class extends React.Component {
                                     </div>
                                 </div>	{/* END FOOTER INFO */}
                                 {/* FOOTER PRODUCTS LINKS */}
-                                <div className="col-md-6 col-lg-2 offset-lg-1">
+                                <div className="col-md-6 col-lg-3">
                                     <div className="footer-links mb-40">
                                         {/* Title */}
                                         <h5 className="h5-xs">Servicios</h5>
                                         {/* Footer List */}
-                                        <ul className="clearfix">
+                                        <ul className="clearfix" style={{paddingInlineStart: "10px" }}>
                                             {
                                                 Array.isArray(value.services) && value.services.map(service => (
                                                     <li key={service._id}><a href={`/servicios/${service.slug}`}>{service.title}</a></li>
@@ -61,10 +62,10 @@ export default class extends React.Component {
                                         {/* Title */}
                                         <h5 className="h5-xs">Especialidades</h5>
                                         {/* Footer Links */}
-                                        <ul className="clearfix">
+                                        <ul className="clearfix" style={{paddingInlineStart: "0px" }}>
                                             {
                                                 Array.isArray(value.departments) && value.departments.map(dpt => (
-                                                    <li key={dpt._id}><a href={`/especialidades/${dpt.slug}`}>{dpt.title}</a></li>
+                                                    <li key={dpt._id}><a href={generateDepartmentUrl(dpt)}>{dpt.title}</a></li>
                                                 ))
                                             }
                                         </ul>
@@ -74,7 +75,7 @@ export default class extends React.Component {
                                 <div className="col-md-6 col-lg-3">
                                     <div className="footer-links mb-20">
                                         <h5 className="h5-xs">¿Cómo podemos ayudarle?</h5>
-                                        <ul className="clearfix">
+                                        <ul className="clearfix" style={{paddingInlineStart: "0px" }}>
                                             <li><a href="/preguntas-frecuentes">Preguntas frecuentes</a></li>
                                             <li><a href="/especialistas">Conozca nuestros doctores</a></li>
                                         </ul>
