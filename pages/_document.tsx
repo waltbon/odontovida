@@ -14,13 +14,13 @@ export default class OdontovidaDocument extends Document {
                     <meta charSet="utf-8" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="author" content="waltbon" />
-                    <meta name="keywords" content="Responsive, HTML5 Template, Jthemes, One Page, Landing, Medical, Health, Healthcare, Doctor, Clinic, Care, Hospital" />
+                    <meta name="keywords" content="Clínica Odontovida, San José, Costa Rica, Desamparados, odontología, dentista, Dental, ortodoncia, blanqueamiento dental, extracciones, coronas, limpieza dental" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+                    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
                     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-                    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
-                    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
-                    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+                    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png" />
+                    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png" />
+                    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png" />
                     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
                     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" />

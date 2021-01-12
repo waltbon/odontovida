@@ -18,7 +18,7 @@ export default class extends React.Component {
                         <header id="header-2" className="header ">
                             <div className="wsmobileheader clearfix">
                                 <a id="wsnavtoggle" className="wsanimated-arrow"><span /></a>
-                                <span className="smllogo"><img src="/images/logo.jpg" width={140} height={50} alt="mobile-logo" /></span>
+                                <a href="/"><span className="smllogo"><img src="/images/logo.jpg" width={140} height={50} alt="mobile-logo" /></span></a>
                                 <a href={`tel:${value.generalInfo.mainPhone}`} className="callusbtn"><i className="fas fa-phone" /></a>
                             </div>
 
@@ -111,7 +111,7 @@ export default class extends React.Component {
                                     </nav>	{/* END MAIN MENU */}
                                     {/* NAVIGATION MENU BUTTON */}
                                     <div className="header-button">
-                                        <span className="nl-simple header-btn d-sm-none"><a href="/contacto">¡Contáctenos ahora!</a></span>
+                                        <span className="nl-simple header-btn hidden-sm-down"><a href="/contacto">¡Contáctenos ahora!</a></span>
                                     </div>
                                 </div>
                             </div>	{/* END NAVIGATION MENU */}

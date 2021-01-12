@@ -1,6 +1,6 @@
 import React from 'react';
 import { MainInfoContext } from '../../contexts/MainInfoContext';
-import { generateDepartmentUrl } from '../../utils/common/urls';
+import { generateDepartmentUrl, generateServiceUrl } from '../../utils/common/urls';
 
 export default class extends React.Component {
     render() {
@@ -50,7 +50,7 @@ export default class extends React.Component {
                                         <ul className="clearfix" style={{paddingInlineStart: "10px" }}>
                                             {
                                                 Array.isArray(value.services) && value.services.map(service => (
-                                                    <li key={service._id}><a href={`/servicios/${service.slug}`}>{service.title}</a></li>
+                                                    <li key={service._id}><a href={generateServiceUrl(service)}>{service.title}</a></li>
                                                 ))
                                             }
                                         </ul>
@@ -86,7 +86,7 @@ export default class extends React.Component {
                             <div className="bottom-footer">
                                 <div className="row">
                                     <div className="col-md-12 block">
-                                        <p className="footer-copyright">Clínica Espcializada Odontovida, 2021.
+                                        <p className="footer-copyright">Clínica Especializada Odontovida, 2021.
                                             <span className="pull-right" style={{ color: 'rgb(185 185 185)' }}> Desarrollado por <a style={{ height: 100, textDecoration: 'underline', color: 'rgb(185 185 185)' }} target="__blank" href="https://cabanadata.com?ref=odontovida">Cabana Data</a>
                                             </span>
                                         </p>

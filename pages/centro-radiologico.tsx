@@ -25,7 +25,7 @@ const CentroRadiologicoPage: NextPage<any> = ({
                         props.headerSliders.map((slider, ix) => {
                             const id = `slide-${ix}`;
                             return (
-                                <li id={id} key={slider._id}>
+                                <li id={id} key={ix}>
                                     {/* Background Image */}
                                     <img src={urlFor(slider.image).url()} alt="slide-background" />
                                     {/* Image Caption */}
@@ -140,7 +140,7 @@ const CentroRadiologicoPage: NextPage<any> = ({
                                                                 <div id="accordion" role="tablist">
                                                                     {
                                                                         service.centroRadServiceFeatures.map((feat, ix) => (
-                                                                            <AccordionItem id={ix.toString()} title={feat.title} collapsed={ix===0}  >
+                                                                            <AccordionItem key={ix} id={ix.toString()} title={feat.title} collapsed={ix===0}  >
                                                                                 <div style={{
                                                                                     padding: "8px 8px"
                                                                                 }}>  

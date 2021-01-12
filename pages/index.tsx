@@ -18,7 +18,6 @@ import TestimonialReview from '../components/home/TestimonialReview';
 import { generateDepartmentUrl, generateDoctorUrl } from '../utils/common/urls';
 import { urlFor } from '../lib/sanity/imageBuilder';
 import VideoSection from '../components/common/VideoSection';
-import KPIsInfo from '../components/info/KPIsInfo';
 import { IService } from '../utils/interfaces/pages/service.interface';
 import { fetchAllDepartments } from '../lib/sanity/queries/departments-query.sanity';
 import { IDepartment } from '../utils/interfaces/pages/department.interface';
@@ -32,24 +31,21 @@ interface Props {
 const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartments }) => {
     return (
         <Layout>
+            <Meta seo={page.seo} />
             <MainInfoContext.Consumer>
                 {
                     value => (<>
-                        <Meta seo={page.seo} />
-
-<section id="hero-11" className="bg-fixed hero-section division">
-
-                        <SlidesContainer>
-                            {
-                                Array.isArray(page.headerSliders) && page.headerSliders.map((slider, ix) => (
-                                <HeroSlider key={ix} sliderId={`slider-${ix}`}
-                                    mainImageUrl={urlFor(slider.image).url()}
-                                    subtitle={page.mainHeader.subtitle} title={slider.title} paragraph={slider.text}     />
-                                ))
-                            }
-                        </SlidesContainer>
-
-                                    </section>
+                        <section id="hero-11" className="bg-fixed hero-section division">
+                            <SlidesContainer>
+                                {
+                                    Array.isArray(page.headerSliders) && page.headerSliders.map((slider, ix) => (
+                                        <HeroSlider key={ix} sliderId={`slider-${ix}`}
+                                            mainImageUrl={urlFor(slider.image).url()}
+                                            subtitle={page.mainHeader.subtitle} title={slider.title} paragraph={slider.text} />
+                                    ))
+                                }
+                            </SlidesContainer>
+                        </section>
                         <AboutSection>
                             {
                                 Array.isArray(page.aboutSection) && page.aboutSection.map((item, ix) => {
@@ -74,8 +70,9 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                         </AboutSection>
 
                         <WelcomeSection callToAction={{
-                            text: `Conozca más sobre la doctra`,
-                            url: generateDoctorUrl(value.principalDoctor) }}
+                            text: `Conozca más sobre la doctora`,
+                            url: generateDoctorUrl(value.principalDoctor)
+                        }}
                             doctorPrincipal={value.principalDoctor}
                             title={page.welcomeSection.title}
                             image={page.welcomeSection.welcomeImage}
@@ -83,11 +80,9 @@ const IndexPage: NextPage<Props> = ({ homePage: page, allServices, allDepartment
                             description={page.welcomeSection.description} >
                         </WelcomeSection>
 
-                        <div className="mb-80 mt-100">
-                            <KPIsInfo />
-                        </div>
+                        {/* <KPIsInfo /> */}
 
-                        <section id="tabs-servicios" className="wide-100 tabs-section ">
+                        <section id="tabs-servicios" className="bg-lightgrey wide-100 tabs-section ">
                             <ServiceTabsContainer services={allServices} />
                         </section>
 

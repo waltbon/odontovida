@@ -10,7 +10,7 @@ export default class extends React.Component<Props> {
         return (<div className="review-2">
             <div className="review-txt text-center">
 
-                <div className="quote"><img src="images/quote.png" alt="quote-img" /></div>
+                <div className="quote"><img src="/images/temp/dental-01.jpg" alt="quote-img" /></div>
                 <div className="testimonial-avatar">
                     {/* <img src="images/review-author-1.jpg" alt="testimonial-avatar" /> */}
                 </div>

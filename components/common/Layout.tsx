@@ -2,11 +2,16 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { MainInfoContext } from '../../contexts/MainInfoContext';
-
+declare var WOW: any;
 interface Props {
 }
 
 export default class extends React.Component<Props> {
+    componentDidMount() {
+        setTimeout(() => {
+            new WOW().init();
+        }, 200);
+    }
     render() {
         return (<>
             <MainInfoContext.Consumer>
