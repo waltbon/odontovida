@@ -31,7 +31,7 @@ export default class extends React.Component<{
                             <div className="txt-block pc-30">
 
                                 <span className="section-id blue-color">{this.props.subtitle}</span>
-                                <h3 className="h3-md steelblue-color">{this.props.title}</h3>
+                                <h1 className="h3-md steelblue-color">{this.props.title}</h1>
                                 <p>{this.props.description}</p>
 
                                 {
