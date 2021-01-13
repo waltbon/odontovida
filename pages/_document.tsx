@@ -57,7 +57,7 @@ export default class OdontovidaDocument extends Document {
                     <script src="/js/jquery.easing.js"></script>
                     <script src="/js/jquery.appear.js"></script>
                     <script src="/js/jquery.stellar.min.js"></script>
-                    <script src="/js/menu.js"></script>
+                    {/* <script src="/js/menu.js"></script> */}
                     {/* <script src="/js/sticky.js"></script> */}
                     <script src="/js/jquery.scrollto.js"></script>
                     <script src="/js/materialize.js"></script>
