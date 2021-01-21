@@ -6,7 +6,7 @@ import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
 import ServiceSidebar from '../../components/service/ServiceSidebar';
 import BlockContent from '../../components/ui/BlockContent';
 import { MainInfoContext } from '../../contexts/MainInfoContext';
-import { urlFor } from '../../lib/sanity/imageBuilder';
+import Meta from '../../components/common/Meta';
 
 interface Props {
     service: IService
@@ -25,36 +25,41 @@ const ServicePage: NextPage<Props> = ({
         url: `/servicios/${service.slug}`,
     }]
     return (<Layout>
-        <MainInfoContext.Consumer>
-            {
-                value => (<>
-                    {/* <Breadcrumbs title={service.subtitle} list={breadcrumbsList} /> */}
+        <Meta seo={{
+            title: `${service.title}. Clínica Dental Odontovida`,
+            description: `${service.shortDescription}`
+        }} />
 
-                    <div id="service-page" className="wide-60 service-page-section division border-bottom-lime">
-                        <div className="container">
-                            <div className="row">
+        {/* <Breadcrumbs title={service.subtitle} list={breadcrumbsList} /> */}
 
-                                <div className="col-lg-7">
-                                    <div className="s2-page pr-30 mb-40">
-                                        <h2 className="h2-md blue-color border-bottom-lime">{service.title}</h2>
-                                        
-                                        {/* <h4 className="h4-sm blue-color">{service.subtitle}</h4> */}
+        <div id="service-page" className="wide-60 service-page-section division border-bottom-lime">
+            <div className="container">
+                <div className="row">
 
-                                    </div>
-                                    <div style={{paddingRight: '40px', textAlign: 'justify'}}>
-                                        <BlockContent blocks={service.body} />
-                                    </div>
-                                </div>
+                    <div className="col-lg-7">
+                        <div className="s2-page pr-30 mb-40">
+                            <h2 className="h2-md blue-color border-bottom-lime">{service.title}</h2>
 
-                                <div id="sidebar" className="col-lg-4 offset-lg-1">
-                                    <ServiceSidebar currentServiceId={service._id} services={value.services} doctor={service.doctor} />
-                                </div>
-                            </div>
+                            {/* <h4 className="h4-sm blue-color">{service.subtitle}</h4> */}
+
+                        </div>
+                        <div style={{ paddingRight: '40px', textAlign: 'justify' }}>
+                            <BlockContent blocks={service.body} />
                         </div>
                     </div>
-                </>)
-            }
-        </MainInfoContext.Consumer>
+
+                    <div id="sidebar" className="col-lg-4 offset-lg-1">
+                        <MainInfoContext.Consumer>
+                            {
+                                value => (<>
+                                    <ServiceSidebar currentServiceId={service._id} services={value.services} doctor={service.doctor} />
+                                </>)
+                            }
+                        </MainInfoContext.Consumer>
+                    </div>
+                </div>
+            </div>
+        </div>
     </Layout>);
 }
 

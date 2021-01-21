@@ -17,6 +17,10 @@ interface Props {
 const IndexPage: NextPage<Props> = ({ doctor }) => {
     return (
         <Layout>
+            <Meta seo={{
+                title: `${doctor.fullname}. Clínica Dental Odontovida`,
+                description: `Conozca más sobre nuestro especialista`
+            }} />
             <MainInfoContext.Consumer>
                 {
                     value => (<>

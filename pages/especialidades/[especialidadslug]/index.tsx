@@ -7,6 +7,8 @@ import { fetchDepartments } from '../../../lib/sanity/queries';
 import BlockContent from '../../../components/ui/BlockContent';
 import DepartmentSidebar from '../../../components/departments/DepartmentSidebar';
 import { generateDepartmentUrl } from '../../../utils/common/urls';
+import React from 'react';
+import Meta from '../../../components/common/Meta';
 
 interface Props {
     department: IDepartment;
@@ -24,6 +26,10 @@ const IndexPage: NextPage<Props> = ({ department }) => {
 
     return (
         <Layout>
+            <Meta seo={{
+                title: `${department.title}. Clínica Dental Odontovida`,
+                description: `${department.description}`
+            }} />
             <MainInfoContext.Consumer>
                 {
                     (value) => (

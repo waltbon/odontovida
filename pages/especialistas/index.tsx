@@ -4,13 +4,17 @@ import { generateDoctorUrl } from '../../utils/common/urls';
 import { urlFor } from '../../lib/sanity/imageBuilder';
 import { fetchDoctors } from '../../lib/sanity/queries';
 import { IDoctor } from '../../utils/interfaces/pages/doctor.interface';
-
+import Meta from '../../components/common/Meta';
 interface Props {
     doctors: IDoctor[]
 }
 
 const DoctorsPage: NextPage<Props> = ({ doctors }) => {
     return (<Layout>
+        <Meta seo={{
+            title: `Nuestros doctores. Clínica Dental Odontovida`,
+            description: `Conozca a nuestros doctores`
+        }} />
             <section id="doctors-3" className="bg-lightgrey wide-60 doctors-section division">
                 <div className="container">
                     <div className="row">

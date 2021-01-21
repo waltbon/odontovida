@@ -12,10 +12,10 @@ interface Props {
 const ContactPage: NextPage<Props> = ({ seo }) => {
     return (
         <Layout>
+            <Meta seo={seo} />
             <MainInfoContext.Consumer>
                 {
                     value => (<>
-                        <Meta seo={seo} />
                         <section id="contacts-1" className="wide-60 contacts-section division">
                             <div className="container">
                                 {/* SECTION TITLE */}
