@@ -24,8 +24,8 @@ const DoctorsPage: NextPage<Props> = ({ doctors }) => {
 
                     <div className="row">
                         {
-                            doctors?.sort(dr => dr.order).map(dr => (
-                                <div className="col-md-6 col-lg-4">
+                            doctors?.map(dr => (
+                                <div key={dr.slug} className="col-md-6 col-lg-4">
                                     <div className="doctor-2">
                                         {/* Doctor Photo */}
                                         <div className="hover-overlay">

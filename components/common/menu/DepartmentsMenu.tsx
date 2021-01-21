@@ -35,7 +35,7 @@ export default class extends React.Component<Props, State> {
                         <li className="title">Nuestros especialistas:</li>
                             <li><a href="/especialistas">Ver todos los especialistas</a></li>
                         {
-                            Array.isArray(this.props.doctors) && this.props.doctors?.sort(dr => dr.order).map(dr =>
+                            Array.isArray(this.props.doctors) && this.props.doctors?.map(dr =>
                                 (<li key={dr._id}><a href={generateDoctorUrl(dr)}>{dr.fullname}</a></li>))
                         }
                     </ul>
