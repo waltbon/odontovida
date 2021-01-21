@@ -110,8 +110,8 @@ export default class extends React.Component {
                                         </ul>
                                     </nav>	{/* END MAIN MENU */}
                                     {/* NAVIGATION MENU BUTTON */}
-                                    <div className="header-button">
-                                        <span className="nl-simple header-btn hidden-sm-down"><a href="/contacto">¡Contáctenos ahora!</a></span>
+                                    <div className="header-button hidden-sm-down">
+                                        <span className="nl-simple header-btn"><a href="/contacto">¡Contáctenos ahora!</a></span>
                                     </div>
                                 </div>
                             </div>	{/* END NAVIGATION MENU */}

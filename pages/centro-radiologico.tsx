@@ -75,7 +75,7 @@ const CentroRadiologicoPage: NextPage<any> = ({
                                 <h3 className="h3-md steelblue-color">{props.aboutSection.title}</h3>
                                 <Markdown content={props.aboutSection.description} />
                                 <div className="singnature mt-35 mb-15">
-                                    <p className="p-small">Atentamente, <br /> Dra. Stephanie Guerreo. <br /> <small className="blue-color"> Odontóloga General, ENFASIS EN CIRUGIA ORAL</small></p>
+                                    <p className="p-small">Atentamente, <br /> Dra. Stephanie Guerrero. <br /> <small className="blue-color"> Odontóloga General, <span className="text-uppercase">énfasis en cirugía oral</span> </small></p>
                                 </div>
                             </div>
                         </div>

@@ -11,30 +11,22 @@ interface Props {
 export default class extends React.Component<Props> {
     constructor(props) {
         super(props);
+        this.handleOnClick = this.handleOnClick.bind(this);
     }
 
     componentDidMount() {
-        $('.nav-pills li').on('click', '[href^="#"]', function (e) {
-            var $nav;
-            // make sure navigation hasn't already been prevented
-            if ( e && e.isDefaultPrevented() ) return
-            // get a reference to the offending navbar
-            $nav = $('div.tab-content')
-    
-            // check if the navbar is fixed
-            if ( $nav.css('position') !== "fixed" ) return
-          
-            // listen for when the browser performs the scroll
-            $(window).one('scroll', function () {
-              // scroll the window up by the height of the navbar
-              window.scrollBy(0, -$nav.height())
-            });
-          
-          });
     }
 
-    handleOnClick(e) {
-
+    handleOnClick(e: any, tabid: string) {
+        e.preventDefault();
+        // $('html, body').animate({
+        //     scrollTop: parseInt($('#pills-tabContent').offset().top) - 300
+        // }, 2000);
+        document.querySelector('#pills-tabContent-container').scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'start'
+          });
     }
 
     render() {
@@ -64,7 +56,7 @@ export default class extends React.Component<Props> {
                                         const aClassName = `nav-link ${tab.selected ? ' active' : ''}`;
                                         return (
                                             <li key={tab.tabId} className="nav-item icon-xs">
-                                                <a className={aClassName} id={tab.tabIdList} data-toggle="pill" href={`#${tab.tabId}`} role="tab" aria-controls={tab.tabId} aria-selected={tab.selected}>
+                                                <a className={aClassName} id={tab.tabIdList} data-toggle="pill" onClick={(e) => this.handleOnClick(e, tab.tabId)} href={`#${tab.tabId}`} role="tab" aria-controls={tab.tabId} aria-selected={tab.selected}>
                                                     {tab.service.title}
                                                 </a>
                                             </li>)
@@ -74,7 +66,7 @@ export default class extends React.Component<Props> {
                         </div>
                     </div>
 
-                    <div className="col-lg-7 col-md-12">
+                    <div className="col-lg-7 col-md-12" id="pills-tabContent-container">
                         <div className="tab-content" id="pills-tabContent">
                             {
                                 tabsInfo.map(tab => {

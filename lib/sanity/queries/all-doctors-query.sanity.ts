@@ -21,7 +21,7 @@ export const allDoctorsInfo = async (): Promise<IDoctor[]> => {
 }
 
 export const getAllDoctorsSimpleInfo = async (): Promise<IDoctor[]> => {
-    const data = await fetchQuerySanity<IDoctorSanity[]>(`*[_type == "doctors"]{
+    const data = await fetchQuerySanity<IDoctorSanity[]>(`*[_type == "doctors"] | order(order) {
         'slug': slug.current,
         title,
         fullname,
