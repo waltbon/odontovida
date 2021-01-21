@@ -9,5 +9,6 @@ module.exports = {
         GTM_ID: 'G-3KFFE7S2T6',
         API_SERVER_URLPROD: 'https://clinicaodontovida.vercel.app',
         API_SERVER_URL: 'http://localhost:3000',
+        WAZE_URL: 'https://waze.com/ul/hd1u0r1bry'
     }
 }

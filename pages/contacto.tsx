@@ -51,6 +51,11 @@ const ContactPage: NextPage<Props> = ({ seo }) => {
                                             <h5 className="h5-sm steelblue-color">Nuestros horarios</h5>
                                             <p>{value.generalInfo.largeSchedule}</p>
                                         </div>
+                                        {/* Waze */}
+                                        <div className="contact-box mb-40">
+                                            <h5 className="h5-sm steelblue-color">¿Cómo llegar a nuestra clínica?</h5>
+                                            <a href={process.env.WAZE_URL}> <i className="fa fa-waze"></i> Ver en Waze</a> 
+                                        </div>
                                     </div>	{/* END CONTACTS INFO */}
                                     {/* CONTACT FORM */}
                                     <div className="col-md-7 col-lg-8">

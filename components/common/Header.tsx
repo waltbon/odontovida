@@ -78,7 +78,7 @@ export default class extends React.Component {
                                                         <div className="header-widget-txt">
                                                             <p className="txt-400">Desamparados, San José</p>
                                                             <p className="lightgrey-color">¿Cómo llegar?
-                                                <a href=""> Ver en Waze</a></p>
+                                                <a href={process.env.WAZE_URL}> Ver en Waze</a></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -103,14 +103,15 @@ export default class extends React.Component {
 
                                             <li aria-haspopup="true"><a href="/centro-radiologico">Centro Radiológico</a></li>
                                             {/* <li className="nl-simple" aria-haspopup="true"><a href="/especialistas">Doctores</a></li> */}
-                                            {/* <li className="nl-simple" aria-haspopup="true"><a href="/preguntas-frecuentes">Preguntas frecuentes</a></li> */}
                                             <li className="nl-simple" aria-haspopup="true"><a href="/preguntas-frecuentes">Preguntas frecuentes</a></li>
+                                            <li className="nl-simple d-md-none d-lg-none" aria-haspopup="false"><a href={process.env.WAZE_URL}> ¿Cómo llegar?</a></li>
+                                            <li className="nl-simple d-md-none d-lg-none" aria-haspopup="false"><a href="/contacto"> Contáctenos</a></li>
                                             {/* HIDDEN NAVIGATION MENU BUTTON */}
-                                            <li className="nl-simple header-btn" aria-haspopup="true"><a className="blue-hover" href="/contacto">¡Escríbanos ahora!</a></li>
+                                            <li className="nl-simple header-btn" aria-haspopup="true"><a className="blue-hover" href="/contacto">¡Contáctenos!</a></li>
                                         </ul>
                                     </nav>	{/* END MAIN MENU */}
                                     {/* NAVIGATION MENU BUTTON */}
-                                    <div className="header-button hidden-sm-down">
+                                    <div className="header-button d-sm-none">
                                         <span className="nl-simple header-btn"><a href="/contacto">¡Contáctenos ahora!</a></span>
                                     </div>
                                 </div>
