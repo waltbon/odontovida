@@ -1,13 +1,12 @@
 declare var $: any;
 import React from 'react';
+import { MainInfoContext } from '../../contexts/MainInfoContext';
 import { urlFor } from '../../lib/sanity/imageBuilder';
 import { IDoctor } from '../../utils/interfaces/pages/doctor.interface';
 import BlockContent from '../ui/BlockContent';
 
 export default class extends React.Component<{
     doctor: IDoctor,
-    phone: string;
-    email: string;
 }> {
 
     componentDidMount() {
@@ -78,58 +77,64 @@ export default class extends React.Component<{
                             </div>	{/* End Doctor Info */}
                             {/* Doctor Contacts */}
                             <div className="doctor-contacts text-center">
-                                <h4 className="h4-xs"><i className="fas fa-mobile-alt" /> {this.props.phone}</h4>
-                                <h4 className="h4-xs blue-color"><i className="fas fa-envelope-open-text" />
-                                    <a href={`mailto:${this.props.email}`} className="blue-color">{this.props.email}</a>
-                                </h4>
-                            </div>
-                            {/* Buttons */}
-                            <div className="doctor-photo-btn text-center">
-                                <a href="/contacto" className="btn btn-md btn-blue blue-hover">¿Desea que lo contactemos?</a>
-                            </div>
-                        </div>
-                    </div>	{/* END DOCTOR PHOTO */}
-                    {/* DOCTOR'S BIO */}
-                    <div className="col-md-7">
-                        <div className="doctor-bio">
-                            <h5 className="h5-md blue-color">Biografía</h5>
-                            <BlockContent blocks={this.props.doctor.description} />
-                            <div className="certificates pt-20">
-                                <h5 className="h5-md blue-color">Aplicaciones</h5>
-                                <p className="pb-2">Conozca algunas de las aplicaciones de mi servicio, aquí podrá ver el antes y el después de nuestros clientes.</p>
-                                <div className="owl-carousel owl-theme reviews-holder">
+                                <MainInfoContext.Consumer>
                                     {
-                                        Array.isArray(this.props.doctor.useCases) && !!this.props.doctor.useCases.length &&
-                                        this.props.doctor.useCases.map((useCase, ucIx) => {
-                                            const galleryCol = useCase.useCaseImages && useCase.useCaseImages.length > 1 ?
-                                                'col-sm-12 col-lg-6' : 'col-sm-12 col-lg-12';
-                                            return (
-                                                <div key={ucIx} className="row">
-                                                    <div className="col-12">
-                                                        <h6 className="h6-md blue-color">{useCase.title}</h6>
-                                                    </div>
-                                                    {
-                                                        useCase.useCaseImages.map((ucImage, imgiX) => {
-                                                            return <div key={imgiX} className={galleryCol}>
-                                                                <div className="certificate-image pb-20">
-                                                                    <a className="image-link" title="">
-                                                                        <img className="img-fluid" src={urlFor(ucImage.image).url()} alt={ucImage.title} />
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        })
-                                                    }
-                                                </div>
-                                            )
-                                        })
+                                        value => (<>
+                                            <h4 className="h4-xs"><i className="fas fa-mobile-alt" /> {value.generalInfo.mainPhone}</h4>
+                                            <h4 className="h4-xs blue-color"><i className="fas fa-envelope-open-text" />
+                                                <a href={`mailto:${value.generalInfo.contactEmail}`} className="blue-color">{value.generalInfo.contactEmail}</a>
+                                            </h4>
+                                        </>)
                                     }
+                                </MainInfoContext.Consumer>
+                            </div>
+                                {/* Buttons */}
+                                <div className="doctor-photo-btn text-center">
+                                    <a href="/contacto" className="btn btn-md btn-blue blue-hover">¿Desea que lo contactemos?</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>	{/* END DOCTOR PHOTO */}
+                        {/* DOCTOR'S BIO */}
+                        <div className="col-md-7">
+                            <div className="doctor-bio">
+                                <h5 className="h5-md blue-color">Biografía</h5>
+                                <BlockContent blocks={this.props.doctor.description} />
+                                <div className="certificates pt-20">
+                                    <h5 className="h5-md blue-color">Aplicaciones</h5>
+                                    <p className="pb-2">Conozca algunas de las aplicaciones de mi servicio, aquí podrá ver el antes y el después de nuestros clientes.</p>
+                                    <div className="owl-carousel owl-theme reviews-holder">
+                                        {
+                                            Array.isArray(this.props.doctor.useCases) && !!this.props.doctor.useCases.length &&
+                                            this.props.doctor.useCases.map((useCase, ucIx) => {
+                                                const galleryCol = useCase.useCaseImages && useCase.useCaseImages.length > 1 ?
+                                                    'col-sm-12 col-lg-6' : 'col-sm-12 col-lg-12';
+                                                return (
+                                                    <div key={ucIx} className="row">
+                                                        <div className="col-12">
+                                                            <h6 className="h6-md blue-color">{useCase.title}</h6>
+                                                        </div>
+                                                        {
+                                                            useCase.useCaseImages.map((ucImage, imgiX) => {
+                                                                return <div key={imgiX} className={galleryCol}>
+                                                                    <div className="certificate-image pb-20">
+                                                                        <a className="image-link" title="">
+                                                                            <img className="img-fluid" src={urlFor(ucImage.image).url()} alt={ucImage.title} />
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            })
+                                                        }
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </div>
 
-                    </div>	{/* END DOCTOR BIO */}
-                </div>    {/* End row */}
-            </div>	   {/* End container */}
+                        </div>	{/* END DOCTOR BIO */}
+                    </div>    {/* End row */}
+                </div>	   {/* End container */}
         </section>
         )
     }
