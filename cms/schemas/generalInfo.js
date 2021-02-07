@@ -26,6 +26,10 @@ export default {
         name: 'mainPhone',
         title: 'Teléfono principal',
         type: 'string'
+      }, {
+        name: 'mainCellPhone',
+        title: 'Teléfono móvil',
+        type: 'string'
       },
       {
         title: 'Redes sociales',

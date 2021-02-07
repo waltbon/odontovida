@@ -111,7 +111,7 @@ export default class extends React.Component {
                                         </ul>
                                     </nav>	{/* END MAIN MENU */}
                                     {/* NAVIGATION MENU BUTTON */}
-                                    <div className="header-button d-sm-none">
+                                    <div className="header-button">
                                         <span className="nl-simple header-btn"><a href="/contacto">¡Contáctenos ahora!</a></span>
                                     </div>
                                 </div>

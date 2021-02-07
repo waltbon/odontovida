@@ -24,8 +24,7 @@ const ContactPage: NextPage<Props> = ({ seo }) => {
                                         {/* Title 	*/}
                                         <h3 className="h3-md steelblue-color">¿Cómo le podemos ayudar?</h3>
                                         {/* Text */}
-                                        <p>Nuestros especialistas están listos para atenderle en .... 
-        </p>
+                                        <p>Nuestros especialistas están listos para atenderle, si tiene alguna consulta o emergencia nosotros podemos ayudarle, no dude en contactarnos ya. </p>
                                     </div>
                                 </div>
                                 <div className="row">
@@ -39,11 +38,12 @@ const ContactPage: NextPage<Props> = ({ seo }) => {
                                         </div>
                                         {/* Patient Experience */}
                                         <div className="contact-box mb-40">
-                                            <h5 className="h5-sm steelblue-color">¿Tiene alguna emergencia?</h5>
+                                            <h5 className="h5-sm steelblue-color">¿Tiene alguna consulta o emergencia?</h5>
                                             <p>Atendemos su consulta por WhatsApp.</p>
                                             <p><i className="fab fa-whatsapp"></i> 
-                                            <a href={`https://wa.me/${value.generalInfo.mainPhone.trim().replace('+','').replace(' ','')}`}></a>
-                                                {value.generalInfo.mainPhone}
+                                            <a href={`https://wa.me/${value.generalInfo.mainCellPhone.trim().replace('+','').replace(' ','')}`}>
+                                                {value.generalInfo.mainCellPhone}
+                                            </a>
                                             </p>
                                         </div>
                                         {/* Working Hours */}

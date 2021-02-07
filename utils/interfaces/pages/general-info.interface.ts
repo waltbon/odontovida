@@ -5,6 +5,7 @@ export interface IGeneralInfo {
     largeSchedule: string;
     mainPhone: string;
     contactEmail: string;
+    mainCellPhone: string;
     socialMedia: {
         facebook: string;
         instagram: string;

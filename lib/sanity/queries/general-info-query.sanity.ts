@@ -12,6 +12,7 @@ export default async (): Promise<IGeneralInfo> => {
         shortAddress,
         largeAddress,
         mainPhone,
+        mainCellPhone,
         socialMedia
     }`);
     if (!data) {
